@@ -11,7 +11,7 @@
     
     <style>
         :root {
-            --primary-color: #e61919; /* Kurumsal Mavi */
+            --primary-color: #e61919; /* Kurumsal Kırmızı */
             --bg-color: #f8fafc;
             --text-color: #334155;
             --heading-color: #000;
@@ -167,7 +167,7 @@
 <header>
     <div class="container nav-wrapper">
         <div class="brand">
-            <span>Conductor App</span>
+            <span id="brand-text">Conductor App</span>
         </div>
         <div class="lang-switch">
             <button class="lang-btn active" onclick="switchLang('en')">EN</button>
@@ -219,7 +219,7 @@
         <p>Link to privacy policy of third party service providers used by the app:</p>
         <ul>
             <li><a href="https://firebase.google.com/policies/analytics" target="_blank">Google Analytics for Firebase</a></li>
-            <li><a href="https://support.google.com/admob/answer/6128543?hl=tr" target="_blank">AdMob</a></li>
+            <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a></li>
             <li><a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a></li>
         </ul>
 
@@ -281,7 +281,7 @@
         <p>Uygulama tarafından kullanılan üçüncü taraf hizmet sağlayıcıların gizlilik politikalarına bağlantılar:</p>
         <ul>
             <li><a href="https://firebase.google.com/policies/analytics" target="_blank">Google Analytics for Firebase</a></li>
-            <li><a href="https://support.google.com/admob/answer/6128543?hl=tr" target="_blank">AdMob</a></li>
+            <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a></li>
             <li><a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a></li>
         </ul>
 
@@ -323,6 +323,14 @@
             section.classList.remove('active');
         });
         document.getElementById(lang).classList.add('active');
+
+        // --- YENİ EKLENEN KISIM: HEADER METNİNİ DEĞİŞTİRME ---
+        const brandText = document.getElementById('brand-text');
+        if(lang === 'tr') {
+            brandText.innerText = 'Kondüktör App';
+        } else {
+            brandText.innerText = 'Conductor App';
+        }
     }
 </script>
 
