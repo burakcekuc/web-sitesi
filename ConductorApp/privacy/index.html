@@ -3,73 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Conductor: Fare Tracker</title>
+    <title>Privacy Policy - Conductor</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        h2 { color: #2c3e50; margin-top: 30px; }
-        .language-section { background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 40px; }
-        hr { border: 0; border-top: 1px dashed #ccc; margin: 40px 0; }
-        .contact { font-weight: bold; }
+        :root {
+            --primary-color: #2563eb; /* Kurumsal Mavi */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header & Nav */
+        header {
+            background: var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 5px;
+            background: #e2e8f0;
+            padding: 4px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .lang-btn {
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: none;
+            background: transparent;
+            color: #64748b;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background: var(--card-bg);
+            color: var(--primary-color);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* Content */
+        .content-section {
+            display: none; /* Varsayılan olarak gizli, JS ile açacağız */
+            padding: 40px 0;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: var(--heading-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .date {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            color: var(--heading-color);
+            margin-top: 2rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        p, ul {
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 40px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
 
-    <div class="language-section">
+<header>
+    <div class="container nav-wrapper">
+        <div class="brand">
+            <span>Conductor App</span>
+        </div>
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+            <button class="lang-btn" onclick="switchLang('tr')">TR</button>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    
+    <div id="en" class="content-section active">
         <h1>Privacy Policy</h1>
-        <p><strong>Last Updated:</strong> January 4, 2026</p>
-        <p>This privacy policy applies to the <strong>Conductor: Fare Tracker</strong> mobile application. Our app is designed to provide transportation fare tracking with a focus on user privacy.</p>
+        <span class="date">Last updated: January 7, 2026</span>
+        
+        <div class="highlight-box">
+            <strong>Summary:</strong> Conductor: Fare Tracker is designed with privacy in mind. We do not store your personal data on our servers. Your data stays on your device.
+        </div>
 
-        <h2>1. Data Collection and Usage</h2>
-        <p>We do not require any user registration or account creation. Your personal data stays with you.</p>
+        <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
+
+        <h2>1. Interpretation and Definitions</h2>
+        <p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
         <ul>
-            <li><strong>Personal Data:</strong> We do not collect names, email addresses, or phone numbers.</li>
-            <li><strong>App Data:</strong> All fare and transportation data you enter is stored locally on your device. In the Premium version, if you choose to back up your data to a cloud service, this process is managed by your chosen provider.</li>
+            <li><strong>Account:</strong> A unique account created for You to access our Service or parts of our Service.</li>
+            <li><strong>Application:</strong> Refers to Conductor: Fare Tracker, the software program provided by the Company.</li>
+            <li><strong>Service:</strong> Refers to the Application.</li>
         </ul>
 
-        <h2>2. Third-Party Services</h2>
-        <p>To provide analytics, handle subscriptions, and show advertisements, we use the following third-party services which may collect device identifiers:</p>
+        <h2>2. Collecting and Using Your Personal Data</h2>
+        <h3>Types of Data Collected</h3>
+        <p>While using Our Application, in order to provide features of Our Application, We may collect, with Your prior permission:</p>
         <ul>
-            <li><strong>Firebase:</strong> Used for app stability and basic usage analytics.</li>
-            <li><strong>RevenueCat:</strong> Used to manage In-App Purchases (IAP) and premium subscriptions.</li>
-            <li><strong>Advertisements:</strong> The free version of the app contains ads. Ad providers may use device IDs to show relevant ads.</li>
+            <li>Information regarding your location (Only if required for fare calculation features)</li>
+            <li>Usage Data (Automatically collected by third-party services)</li>
         </ul>
 
-        <h2>3. Data Storage</h2>
-        <p>Your data is stored in the local memory of your device. We do not have access to your transportation logs unless you explicitly share or export them.</p>
+        <h3>Personal Data</h3>
+        <p>We do not collect personally identifiable information such as your name, email address, or phone number explicitly. No registration is required to use the core features of the app.</p>
 
-        <h2>4. Contact Us</h2>
-        <p class="contact">If you have any questions, please contact us at: adsoyad.app@gmail.com</p>
+        <h2>3. Third-Party Service Providers</h2>
+        <p>We may employ third-party companies and individuals due to the following reasons:</p>
+        <ul>
+            <li>To facilitate our Service;</li>
+            <li>To provide the Service on our behalf;</li>
+            <li>To perform Service-related services; or</li>
+            <li>To assist us in analyzing how our Service is used.</li>
+        </ul>
+        <p>We want to inform users of this Service that these third parties have access to your Personal Information (Device IDs, Usage Data). The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.</p>
+        <p>Link to privacy policy of third party service providers used by the app:</p>
+        <ul>
+            <li><a href="https://firebase.google.com/policies/analytics" target="_blank">Google Analytics for Firebase</a></li>
+            <li><a href="https://support.google.com/admob/answer/6128543?hl=tr" target="_blank">AdMob</a></li>
+            <li><a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a></li>
+        </ul>
+
+        <h2>4. Log Data</h2>
+        <p>We want to inform you that whenever you use our Service, in a case of an error in the app we collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.</p>
+
+        <h2>5. Security</h2>
+        <p>The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</p>
+
+        <h2>6. Children’s Privacy</h2>
+        <p>These Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we will be able to do necessary actions.</p>
+
+        <h2>7. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, You can contact us:</p>
+        <ul>
+            <li>By email: <strong>adsoyad.app@gmail.com</strong></li>
+        </ul>
     </div>
 
-    <hr>
-
-    <div class="language-section">
+    <div id="tr" class="content-section">
         <h1>Gizlilik Politikası</h1>
-        <p><strong>Son Güncelleme:</strong> 4 Ocak 2026</p>
-        <p>Bu gizlilik politikası, <strong>Kondüktör: Ulaşım Ücret Takibi</strong> mobil uygulaması için geçerlidir. Uygulamamız, kullanıcı gizliliğine odaklanarak ulaşım ücreti takibi sağlamak üzere tasarlanmıştır.</p>
+        <span class="date">Son güncelleme: 7 Ocak 2026</span>
 
-        <h2>1. Veri Toplama ve Kullanımı</h2>
-        <p>Herhangi bir kullanıcı kaydı veya hesap oluşturma zorunluluğu yoktur. Kişisel verileriniz sizde kalır.</p>
+        <div class="highlight-box">
+            <strong>Özet:</strong> Kondüktör: Ulaşım Ücret Takibi, gizliliğinize önem verecek şekilde tasarlanmıştır. Kişisel verilerinizi sunucularımızda saklamıyoruz. Verileriniz cihazınızda kalır.
+        </div>
+
+        <p>Bu Gizlilik Politikası, Hizmeti kullandığınızda bilgilerinizin toplanması, kullanılması ve ifşa edilmesine ilişkin politikalarımızı ve prosedürlerimizi açıklar; gizlilik haklarınız ve yasaların sizi nasıl koruduğu hakkında bilgi verir.</p>
+
+        <h2>1. Tanımlar</h2>
+        <p>Baş harfi büyük olan kelimeler aşağıdaki koşullarda tanımlanan anlamlara sahiptir. Aşağıdaki tanımlar, tekil veya çoğul olarak görünüp görünmediklerine bakılmaksızın aynı anlama gelecektir.</p>
         <ul>
-            <li><strong>Kişisel Veriler:</strong> İsim, e-posta veya telefon numarası gibi veriler toplamıyoruz.</li>
-            <li><strong>Uygulama Verileri:</strong> Girdiğiniz tüm ücret ve ulaşım verileri cihazınızın hafızasında yerel olarak saklanır. Premium versiyonda, verilerinizi bir bulut platformuna yedeklemeyi seçerseniz, bu süreç seçtiğiniz sağlayıcı tarafından yönetilir.</li>
+            <li><strong>Uygulama:</strong> Şirket tarafından sağlanan yazılım programı olan Kondüktör: Ulaşım Ücret Takibi'ni ifade eder.</li>
+            <li><strong>Hizmet:</strong> Uygulamayı ifade eder.</li>
+            <li><strong>Üçüncü Taraf:</strong> Uygulama içinde kullanılan Firebase, RevenueCat vb. servis sağlayıcıları ifade eder.</li>
         </ul>
 
-        <h2>2. Üçüncü Taraf Hizmetler</h2>
-        <p>Analiz yapmak, abonelikleri yönetmek ve reklam göstermek için cihaz kimliklerini toplayabilecek aşağıdaki üçüncü taraf hizmetleri kullanıyoruz:</p>
+        <h2>2. Verilerinizin Toplanması ve Kullanımı</h2>
+        <h3>Toplanan Veri Türleri</h3>
+        <p>Uygulamamızı kullanırken, uygulamanın özelliklerini sağlamak amacıyla şunları toplayabiliriz (veya üçüncü taraflar aracılığıyla işleyebiliriz):</p>
         <ul>
-            <li><strong>Firebase:</strong> Uygulama kararlılığı ve temel kullanım analizleri için kullanılır.</li>
-            <li><strong>RevenueCat:</strong> Uygulama içi satın alımları (IAP) ve premium abonelikleri yönetmek için kullanılır.</li>
-            <li><strong>Reklamlar:</strong> Uygulamanın ücretsiz sürümü reklam içerir. Reklam sağlayıcılar, ilgili reklamları göstermek için cihaz kimliklerini kullanabilir.</li>
+            <li>Cihaz Kullanım Verileri (Otomatik olarak toplanır)</li>
+            <li>Hata Günlükleri (Crash logs)</li>
+            <li>Reklam Kimlikleri (Reklam gösterimi için)</li>
         </ul>
 
-        <h2>3. Veri Saklama</h2>
-        <p>Verileriniz cihazınızın yerel hafızasında saklanır. Siz açıkça paylaşmadığınız veya dışa aktarmadığınız sürece ulaşım kayıtlarınıza erişimimiz yoktur.</p>
+        <h3>Kişisel Veriler</h3>
+        <p>İsim, e-posta adresi veya telefon numarası gibi kişisel olarak tanımlanabilir bilgileri açıkça toplamıyoruz. Uygulamanın temel özelliklerini kullanmak için kayıt zorunlu değildir.</p>
 
-        <h2>4. İletişim</h2>
-        <p class="contact">Sorularınız için bizimle şu adresten iletişime geçebilirsiniz: adsoyad.app@gmail.com</p>
+        <h2>3. Üçüncü Taraf Hizmet Sağlayıcıları</h2>
+        <p>Aşağıdaki nedenlerden dolayı üçüncü taraf şirketleri ve bireyleri kullanabiliriz:</p>
+        <ul>
+            <li>Hizmetimizi kolaylaştırmak;</li>
+            <li>Hizmeti bizim adımıza sağlamak;</li>
+            <li>Hizmetle ilgili hizmetleri gerçekleştirmek; veya</li>
+            <li>Hizmetimizin nasıl kullanıldığını analiz etmemize yardımcı olmak.</li>
+        </ul>
+        <p>Bu Hizmetin kullanıcılarını, bu üçüncü tarafların Kişisel Bilgilerinize (Cihaz Kimlikleri, Kullanım Verileri) erişimi olduğu konusunda bilgilendirmek istiyoruz. Bunun nedeni, kendilerine verilen görevleri bizim adımıza yerine getirmektir. Ancak bilgileri başka bir amaçla açıklamamak veya kullanmamakla yükümlüdürler.</p>
+        <p>Uygulama tarafından kullanılan üçüncü taraf hizmet sağlayıcıların gizlilik politikalarına bağlantılar:</p>
+        <ul>
+            <li><a href="https://firebase.google.com/policies/analytics" target="_blank">Google Analytics for Firebase</a></li>
+            <li><a href="https://support.google.com/admob/answer/6128543?hl=tr" target="_blank">AdMob</a></li>
+            <li><a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a></li>
+        </ul>
+
+        <h2>4. Günlük Verileri (Log Data)</h2>
+        <p>Hizmetimizi her kullandığınızda, uygulamada bir hata olması durumunda telefonunuzda Günlük Verileri (üçüncü taraf ürünleri aracılığıyla) adı verilen veri ve bilgileri topladığımızı bildirmek isteriz. Bu Günlük Verileri, cihazınızın İnternet Protokolü (“IP”) adresi, cihaz adı, işletim sistemi sürümü, Hizmetimizi kullanırken uygulamanın yapılandırması, Hizmeti kullanım saatiniz ve tarihiniz ve diğer istatistikler gibi bilgileri içerebilir.</p>
+
+        <h2>5. Güvenlik</h2>
+        <p>Kişisel Verilerinizin güvenliği bizim için önemlidir, ancak İnternet üzerinden hiçbir aktarım yönteminin veya elektronik depolama yönteminin %100 güvenli olmadığını unutmayın. Kişisel Verilerinizi korumak için ticari olarak kabul edilebilir yöntemleri kullanmaya çabalasak da, mutlak güvenliğini garanti edemeyiz.</p>
+
+        <h2>6. İletişim</h2>
+        <p>Bu Gizlilik Politikası hakkında herhangi bir sorunuz varsa, bizimle iletişime geçebilirsiniz:</p>
+        <ul>
+            <li>E-posta yoluyla: <strong>adsoyad.app@gmail.com</strong></li>
+        </ul>
     </div>
+
+</main>
+
+<footer>
+    <div class="container">
+        &copy; 2026 Conductor: Fare Tracker. All rights reserved.
+    </div>
+</footer>
+
+<script>
+    function switchLang(lang) {
+        // Butonların aktiflik durumunu güncelle
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Tıklanan butonu aktif yap (basit bir seçim mantığı)
+        const buttons = document.querySelectorAll('.lang-btn');
+        if(lang === 'en') buttons[0].classList.add('active');
+        else buttons[1].classList.add('active');
+
+        // İçerikleri gizle/göster
+        document.querySelectorAll('.content-section').forEach(section => {
+            section.classList.remove('active');
+        });
+        document.getElementById(lang).classList.add('active');
+    }
+</script>
 
 </body>
 </html>
