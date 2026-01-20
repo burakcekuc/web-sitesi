@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Conductor</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #e61919;
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --heading-color: #000;
+            --card-bg: #ffffff;
+            --input-border: #cbd5e1;
+        }
+
+        body {
+            font-family: 'Spline Sans', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background: var(--primary-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 600px; /* Form sayfası daha dar olsun */
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--card-bg);
+            text-decoration: none;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 5px;
+            background: #e2e8f0;
+            padding: 4px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .lang-btn {
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: none;
+            background: transparent;
+            color: #64748b;
+            transition: all 0.3s ease;
+            font-family: 'Spline Sans', sans-serif;
+        }
+
+        .lang-btn.active {
+            background: var(--card-bg);
+            color: var(--primary-color);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* Form Styling */
+        .form-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        h1 { margin-top: 0; color: var(--heading-color); }
+        p { color: #64748b; margin-bottom: 2rem; }
+
+        .form-group { margin-bottom: 20px; }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--heading-color);
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--input-border);
+            border-radius: 8px;
+            font-family: 'Spline Sans', sans-serif;
+            font-size: 1rem;
+            box-sizing: border-box; /* Padding taşmasını önler */
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(230, 25, 25, 0.1);
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            background: var(--primary-color);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background: #cc0000;
+        }
+
+        /* Gizlilik Linki */
+        .privacy-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+        .privacy-link a { color: var(--primary-color); text-decoration: none; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <a href="#" class="brand">
+            <span id="brand-text">Conductor Support</span>
+        </a>
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+            <button class="lang-btn" onclick="switchLang('tr')">TR</button>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    
+    <div class="form-card">
+        <h1 id="page-title">Contact Support</h1>
+        <p id="page-desc">Have a question or feedback? Fill out the form below and we'll get back to you as soon as possible.</p>
+
+        <form action="https://formspree.io/f/meeezdod" method="POST">
+            
+            <div class="form-group">
+                <label for="name" id="label-name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email" id="label-email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject" id="label-subject">Subject</label>
+                <select id="subject" name="subject">
+                    <option value="Feedback">Feedback / Suggestion</option>
+                    <option value="Bug">Report a Bug</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message" id="label-message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+            </div>
+
+            <button type="submit" id="btn-submit">Send Message</button>
+        </form>
+
+        <div class="privacy-link">
+            <span id="privacy-note">We respect your privacy.</span> 
+            <a href="../privacy/" id="privacy-anchor">Read Privacy Policy</a>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <div class="container">
+        &copy; 2026 Conductor App. All rights reserved.
+    </div>
+</footer>
+
+<script>
+    function switchLang(lang) {
+        // Butonları güncelle
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        const buttons = document.querySelectorAll('.lang-btn');
+        if(lang === 'en') buttons[0].classList.add('active');
+        else buttons[1].classList.add('active');
+
+        // Metinleri Güncelle
+        if(lang === 'tr') {
+            document.getElementById('brand-text').innerText = 'Kondüktör Destek';
+            document.getElementById('page-title').innerText = 'Destek ile İletişime Geçin';
+            document.getElementById('page-desc').innerText = 'Bir sorunuz veya geri bildiriminiz mi var? Formu doldurun, size en kısa sürede dönüş yapalım.';
+            
+            document.getElementById('label-name').innerText = 'Ad Soyad';
+            document.getElementById('name').placeholder = 'Adınız Soyadınız';
+            
+            document.getElementById('label-email').innerText = 'E-posta Adresi';
+            document.getElementById('email').placeholder = 'ornek@email.com';
+
+            document.getElementById('label-subject').innerText = 'Konu';
+            // Select box seçeneklerini güncelle
+            const select = document.getElementById('subject');
+            select.options[0].text = 'Geri Bildirim / Öneri';
+            select.options[1].text = 'Hata Bildirimi';
+            select.options[2].text = 'Diğer';
+
+            document.getElementById('label-message').innerText = 'Mesajınız';
+            document.getElementById('message').placeholder = 'Size nasıl yardımcı olabiliriz?';
+            
+            document.getElementById('btn-submit').innerText = 'Mesajı Gönder';
+            document.getElementById('privacy-note').innerText = 'Gizliliğinize saygı duyuyoruz.';
+            document.getElementById('privacy-anchor').innerText = 'Gizlilik Politikasını Oku';
+        } else {
+            document.getElementById('brand-text').innerText = 'Conductor Support';
+            document.getElementById('page-title').innerText = 'Contact Support';
+            document.getElementById('page-desc').innerText = 'Have a question or feedback? Fill out the form below and we\'ll get back to you as soon as possible.';
+            
+            document.getElementById('label-name').innerText = 'Full Name';
+            document.getElementById('name').placeholder = 'John Doe';
+            
+            document.getElementById('label-email').innerText = 'Email Address';
+            document.getElementById('email').placeholder = 'john@example.com';
+
+            document.getElementById('label-subject').innerText = 'Subject';
+            const select = document.getElementById('subject');
+            select.options[0].text = 'Feedback / Suggestion';
+            select.options[1].text = 'Report a Bug';
+            select.options[2].text = 'Other';
+
+            document.getElementById('label-message').innerText = 'Message';
+            document.getElementById('message').placeholder = 'How can we help you?';
+            
+            document.getElementById('btn-submit').innerText = 'Send Message';
+            document.getElementById('privacy-note').innerText = 'We respect your privacy.';
+            document.getElementById('privacy-anchor').innerText = 'Read Privacy Policy';
+        }
+    }
+</script>
+
+</body>
+</html>
