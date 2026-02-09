@@ -75,7 +75,6 @@
             background: transparent;
             color: #64748b;
             transition: all 0.3s ease;
-            font-family: 'Spline Sans', sans-serif;
         }
 
         .lang-btn.active {
@@ -87,29 +86,28 @@
         .content-section {
             display: none;
             padding: 40px 0;
-            animation: fadeIn 0.5s ease;
         }
 
         .content-section.active {
             display: block;
         }
 
-        h1 { font-size: 2rem; color: var(--heading-color); margin-bottom: 0.5rem; }
+        h1 { font-size: 2.2rem; color: var(--heading-color); margin-bottom: 0.5rem; }
         .date { font-size: 0.9rem; color: #64748b; margin-bottom: 2rem; display: block; }
-        h2 { font-size: 1.25rem; color: var(--heading-color); margin-top: 2rem; border-left: 4px solid var(--primary-color); padding-left: 10px; }
-        p, ul { margin-bottom: 1rem; }
+        h2 { font-size: 1.5rem; color: var(--heading-color); margin-top: 2.5rem; border-left: 5px solid var(--primary-color); padding-left: 15px; }
+        h3 { font-size: 1.1rem; color: var(--heading-color); margin-top: 1.5rem; }
+        p, ul { margin-bottom: 1.2rem; }
         ul { padding-left: 20px; }
-        li { margin-bottom: 0.5rem; }
+        li { margin-bottom: 0.7rem; }
         a { color: var(--primary-color); text-decoration: none; font-weight: 500; }
-        a:hover { text-decoration: underline; }
-
+        
         .highlight-box {
-            background: #ffe0e0;
-            border: 1px solid #ff6969;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-left: 5px solid var(--primary-color);
             border-radius: 8px;
-            padding: 15px;
+            padding: 20px;
             margin: 20px 0;
-            font-size: 0.95rem;
         }
 
         footer {
@@ -120,28 +118,16 @@
             border-top: 1px solid #e2e8f0;
             margin-top: 40px;
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
     </style>
 </head>
 <body>
 
 <header>
     <div class="container nav-wrapper">
-        <div class="brand">
-            <span id="brand-text">Conductor App</span>
-        </div>
-        
-        <div style="display: flex; align-items: center; gap: 20px;">
-            <a href="../support/" id="nav-support" style="color: white; text-decoration: none; font-size: 0.9rem; font-weight: 500;">Support</a>
-            
-            <div class="lang-switch">
-                <button class="lang-btn active" onclick="switchLang('en')">EN</button>
-                <button class="lang-btn" onclick="switchLang('tr')">TR</button>
-            </div>
+        <div class="brand">Conductor App</div>
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+            <button class="lang-btn" onclick="switchLang('tr')">TR</button>
         </div>
     </div>
 </header>
@@ -153,32 +139,44 @@
         <span class="date">Last updated: February 9, 2026</span>
         
         <div class="highlight-box">
-            <strong>Summary:</strong> Conductor App uses industry-standard third-party services to improve your experience and manage subscriptions. While we do not store personal details like your name on our own servers, certain data is processed by our partners for functionality, analytics, and advertising.
+            <strong>Commitment to Privacy:</strong> This policy applies to Conductor App on both the App Store and Google Play Store. We are committed to transparency regarding how data is collected and processed by our third-party partners.
         </div>
 
-        <h2>1. Data Collection and Usage</h2>
-        <p>In accordance with App Store transparency requirements, we disclose that the following data types may be collected and linked to your identity through third-party services:</p>
+        <h2>1. Information We Collect</h2>
+        <p>To provide, improve, and protect our services, we and our service providers collect certain information. This data may be linked to your device or identity.</p>
+        
+        <h3>A. Automated Information Collection</h3>
         <ul>
-            <li><strong>Location:</strong> Coarse location data is used for analytics and localized advertising (AdMob).</li>
-            <li><strong>Identifiers:</strong> User IDs and Device IDs are used for app functionality, analytics, and cross-app tracking.</li>
-            <li><strong>Purchases:</strong> Transaction history is processed to manage your premium subscriptions (RevenueCat).</li>
-            <li><strong>Usage Data:</strong> Information about how you interact with the app is used for product improvement (Firebase).</li>
-            <li><strong>Diagnostics:</strong> Crash logs and performance data are collected to ensure app stability.</li>
+            <li><strong>Identifiers:</strong> We collect persistent identifiers (such as Device ID, IP Address, and User IDs) to distinguish unique users and manage sessions.</li>
+            <li><strong>Usage Data:</strong> We track interactions within the app (e.g., button clicks, features used) to analyze product performance.</li>
+            <li><strong>Diagnostics:</strong> In the event of an app crash, we collect technical data (crash logs, device model, OS version) to fix bugs.</li>
         </ul>
 
-        <h2>2. Third-Party Partners & Tracking</h2>
-        <p>We use third-party SDKs that may track your activity across other companies' apps and websites for advertising purposes. You can manage these permissions via the iOS "App Tracking Transparency" prompt.</p>
+        <h3>B. Location and Personal Data</h3>
         <ul>
-            <li><a href="https://firebase.google.com/policies/analytics" target="_blank">Google Analytics for Firebase</a> (Analytics & Diagnostics)</li>
-            <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a> (Third-party Advertising & Tracking)</li>
-            <li><a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a> (In-app Purchases & Subscriptions)</li>
+            <li><strong>Coarse Location:</strong> We process non-precise location data to provide localized content and advertising.</li>
+            <li><strong>Purchase History:</strong> Information regarding your premium subscriptions is processed for account management.</li>
         </ul>
 
-        <h2>3. Data Security and Retention</h2>
-        <p>Data is stored by our third-party partners under their respective security protocols. We do not maintain an independent database of your personal information.</p>
+        <h2>2. Third-Party Service Providers</h2>
+        <p>We use industry-standard SDKs to perform specific functions. These partners may track your activity across other apps and websites for advertising purposes:</p>
+        <ul>
+            <li><strong>AdMob (Google):</strong> Used for delivering personalized and non-personalized advertisements.</li>
+            <li><strong>Google Analytics for Firebase:</strong> Used to understand user behavior and application performance.</li>
+            <li><strong>RevenueCat:</strong> Used for secure in-app purchase validation and subscription management.</li>
+        </ul>
 
-        <h2>4. Contact Us</h2>
-        <p>By email: <strong>burakcekuc.app@gmail.com</strong></p>
+        <h2>3. Data Deletion and Retention</h2>
+        <p><strong>Google Play Compliance:</strong> We do not store your personal information on our own private servers. Most data is stored locally on your device or managed by our third-party partners. If you wish to request the deletion of data associated with your User ID, please contact us at <strong>burakcekuc.app@gmail.com</strong>. We will facilitate the request with our service providers within a reasonable timeframe.</p>
+
+        <h2>4. Security</h2>
+        <p>We use commercially reasonable security measures to protect your information. However, no electronic transmission or storage is 100% secure.</p>
+
+        <h2>5. Children’s Privacy</h2>
+        <p>Our Service is not intended for children under 13. We do not knowingly collect personal data from children.</p>
+
+        <h2>6. Contact</h2>
+        <p>Email: <strong>burakcekuc.app@gmail.com</strong></p>
     </div>
 
     <div id="tr" class="content-section">
@@ -186,62 +184,60 @@
         <span class="date">Son güncelleme: 9 Şubat 2026</span>
 
         <div class="highlight-box">
-            <strong>Özet:</strong> Kondüktör App, deneyiminizi iyileştirmek ve abonelikleri yönetmek için endüstri standardı üçüncü taraf hizmetleri kullanır. İsim gibi kişisel detayları kendi sunucularımızda saklamasak da, belirli veriler işlevsellik, analiz ve reklam amaçlı ortaklarımız tarafından işlenir.
+            <strong>Gizlilik Taahhüdü:</strong> Bu politika, hem App Store hem de Google Play Store'daki Kondüktör App için geçerlidir. Verilerinizin üçüncü taraf ortaklarımız tarafından nasıl toplandığı ve işlendiği konusunda şeffaflık sağlamayı taahhüt ediyoruz.
         </div>
 
-        <h2>1. Veri Toplama ve Kullanım Amaçları</h2>
-        <p>App Store şeffaflık kuralları gereği, aşağıdaki veri türlerinin üçüncü taraf hizmetler aracılığıyla toplanabileceğini ve kimliğinizle ilişkilendirilebileceğini beyan ederiz:</p>
+        <h2>1. Toplanan Bilgiler</h2>
+        <p>Hizmetlerimizi sunmak, iyileştirmek ve korumak için biz ve hizmet sağlayıcılarımız belirli bilgileri toplarız. Bu veriler cihazınızla veya kimliğinizle ilişkilendirilebilir.</p>
+        
+        <h3>A. Otomatik Bilgi Toplama</h3>
         <ul>
-            <li><strong>Konum:</strong> Yaklaşık konum verileri, analiz ve yerelleştirilmiş reklamlar (AdMob) için kullanılır.</li>
-            <li><strong>Kimlik Tanımlayıcılar:</strong> Kullanıcı ve Cihaz Kimlikleri; uygulama işlevselliği, analiz ve uygulamalar arası takip için kullanılır.</li>
-            <li><strong>Satın Alımlar:</strong> İşlem geçmişi, premium aboneliklerinizi yönetmek için işlenir (RevenueCat).</li>
-            <li><strong>Kullanım Verileri:</strong> Uygulama ile nasıl etkileşime girdiğinize dair bilgiler ürün iyileştirme için kullanılır (Firebase).</li>
-            <li><strong>Tanılama:</strong> Uygulama kararlılığını sağlamak için hata günlükleri ve performans verileri toplanır.</li>
+            <li><strong>Tanımlayıcılar:</strong> Benzersiz kullanıcıları ayırt etmek ve oturumları yönetmek için kalıcı tanımlayıcılar (Cihaz Kimliği, IP Adresi ve Kullanıcı Kimlikleri) topluyoruz.</li>
+            <li><strong>Kullanım Verileri:</strong> Ürün performansını analiz etmek için uygulama içindeki etkileşimleri (örneğin buton tıklamaları, kullanılan özellikler) takip ediyoruz.</li>
+            <li><strong>Tanılama:</strong> Uygulama çökmesi durumunda, hataları düzeltmek için teknik veriler (hata günlükleri, cihaz modeli, işletim sistemi sürümü) topluyoruz.</li>
         </ul>
 
-        <h2>2. Üçüncü Taraf Ortaklar ve Takip (Tracking)</h2>
-        <p>Reklam amaçlı olarak diğer şirketlerin uygulamaları ve web siteleri genelindeki faaliyetlerinizi izleyebilecek üçüncü taraf SDK'lar kullanıyoruz. Bu izinleri iOS "Uygulama Takibi Şeffaflığı" (ATT) uyarısı üzerinden yönetebilirsiniz.</p>
+        <h3>B. Konum ve Kişisel Veriler</h3>
         <ul>
-            <li><a href="https://firebase.google.com/policies/analytics" target="_blank">Google Analytics for Firebase</a> (Analiz ve Tanılama)</li>
-            <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a> (Reklam ve Takip)</li>
-            <li><a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a> (Uygulama İçi Satın Alımlar)</li>
+            <li><strong>Yaklaşık Konum:</strong> Yerelleştirilmiş içerik ve reklam sağlamak için kesin olmayan konum verilerini işliyoruz.</li>
+            <li><strong>Satın Alma Geçmişi:</strong> Premium aboneliklerinize ilişkin bilgiler hesap yönetimi için işlenir.</li>
         </ul>
 
-        <h2>3. Veri Güvenliği</h2>
-        <p>Veriler, üçüncü taraf ortaklarımız tarafından kendi güvenlik protokolleri altında saklanmaktadır. Kişisel bilgilerinizden oluşan bağımsız bir veritabanı tutmuyoruz.</p>
+        <h2>2. Üçüncü Taraf Hizmet Sağlayıcılar</h2>
+        <p>Belirli işlevleri yerine getirmek için endüstri standardı SDK'lar kullanıyoruz. Bu ortaklar, reklam amaçlı olarak diğer uygulama ve web sitelerindeki faaliyetlerinizi izleyebilir:</p>
+        <ul>
+            <li><strong>AdMob (Google):</strong> Kişiselleştirilmiş ve kişiselleştirilmemiş reklamların sunulması için kullanılır.</li>
+            <li><strong>Google Analytics for Firebase:</strong> Kullanıcı davranışını ve uygulama performansını anlamak için kullanılır.</li>
+            <li><strong>RevenueCat:</strong> Güvenli uygulama içi satın alma doğrulama ve abonelik yönetimi için kullanılır.</li>
+        </ul>
 
-        <h2>4. İletişim</h2>
+        <h2>3. Veri Silme ve Saklama</h2>
+        <p><strong>Google Play Uyumluluğu:</strong> Kişisel bilgilerinizi kendi özel sunucularımızda saklamıyoruz. Çoğu veri cihazınızda yerel olarak saklanır veya üçüncü taraf ortaklarımız tarafından yönetilir. Kullanıcı Kimliğinizle ilişkili verilerin silinmesini talep etmek isterseniz, lütfen <strong>burakcekuc.app@gmail.com</strong> adresinden bizimle iletişime geçin.</p>
+
+        <h2>4. Güvenlik</h2>
+        <p>Bilgilerinizi korumak için ticari olarak makul güvenlik önlemleri kullanıyoruz. Ancak, elektronik iletim veya depolama hiçbir zaman %100 güvenli değildir.</p>
+
+        <h2>5. Çocukların Gizliliği</h2>
+        <p>Hizmetimiz 13 yaşın altındaki çocuklara yönelik değildir. Çocuklardan bilerek kişisel veri toplamıyoruz.</p>
+
+        <h2>6. İletişim</h2>
         <p>E-posta: <strong>burakcekuc.app@gmail.com</strong></p>
     </div>
 
 </main>
 
 <footer>
-    <div class="container">
-        &copy; 2026 Burak Çeküç. All rights reserved.
-    </div>
+    <div class="container">&copy; 2026 Burak Çeküç. All rights reserved.</div>
 </footer>
 
 <script>
     function switchLang(lang) {
         document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
         const buttons = document.querySelectorAll('.lang-btn');
-        if(lang === 'en') buttons[0].classList.add('active');
-        else buttons[1].classList.add('active');
+        if(lang === 'en') buttons[0].classList.add('active'); else buttons[1].classList.add('active');
 
         document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
         document.getElementById(lang).classList.add('active');
-
-        const brandText = document.getElementById('brand-text');
-        const navSupport = document.getElementById('nav-support');
-        
-        if(lang === 'tr') {
-            brandText.innerText = 'Kondüktör App';
-            navSupport.innerText = 'Destek';
-        } else {
-            brandText.innerText = 'Conductor App';
-            navSupport.innerText = 'Support';
-        }
     }
 </script>
 
