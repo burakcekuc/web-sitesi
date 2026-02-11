@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conductor - Fare Assistant</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #e61919;
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --heading-color: #000;
+            --card-bg: #ffffff;
+            --secondary-bg: #f1f5f9;
+        }
+
+        body {
+            font-family: 'Spline Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Navigasyon - Diğer sayfalarınla aynı stil */
+        header {
+            background: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .nav-links a:hover { opacity: 1; }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        .hero-content { flex: 1; }
+        .hero-image { 
+            flex: 1; 
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 24px;
+            /* Maskotun burada olduğunu hayal ediyoruz */
+        }
+
+        .mascot-badge {
+            position: absolute;
+            bottom: -20px;
+            right: 0;
+            background: white;
+            padding: 12px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; color: var(--heading-color); }
+        .hero p { font-size: 1.25rem; margin-bottom: 2.5rem; color: #64748b; }
+
+        .cta-buttons { display: flex; gap: 15px; }
+        .btn {
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-primary { background: var(--primary-color); color: white; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(230,25,25,0.3); }
+
+        /* Features Section */
+        .features { padding: 100px 0; background: white; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .feature-card {
+            padding: 40px;
+            background: var(--bg-color);
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover { transform: translateY(-5px); }
+        .feature-card h3 { color: var(--heading-color); margin-top: 0; }
+
+        /* Pricing Section */
+        .pricing { padding: 100px 0; }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 400px));
+            gap: 30px;
+            justify-content: center;
+        }
+        .price-card {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            border: 2px solid #e2e8f0;
+            text-align: center;
+        }
+        .price-card.featured {
+            border-color: var(--primary-color);
+            position: relative;
+        }
+        .price-card.featured::top {
+            content: "BEST VALUE";
+            /* ... */
+        }
+        .price { font-size: 3rem; font-weight: 700; color: var(--heading-color); margin: 20px 0; }
+        .price span { font-size: 1rem; color: #64748b; }
+        
+        .feature-list { list-style: none; padding: 0; margin: 30px 0; text-align: left; }
+        .feature-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+        .feature-list li::before { content: "✓"; color: var(--primary-color); font-weight: bold; }
+
+        footer {
+            padding: 60px 0;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        .footer-links { margin-bottom: 20px; display: flex; justify-content: center; gap: 30px; }
+        .footer-links a { color: #64748b; text-decoration: none; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; padding: 40px 0; }
+            h1 { font-size: 2.5rem; }
+            .cta-buttons { justify-content: center; }
+            .nav-links { display: none; } /* Mobil menü basitliği için */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <a href="#" class="brand" id="brand-name">Conductor</a>
+        <div class="nav-links">
+            <a href="#features" id="nav-features">Features</a>
+            <a href="#pricing" id="nav-pricing">Pricing</a>
+            <a href="support/" id="nav-support">Support</a>
+            <div style="background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; color: white;" onclick="toggleLang()">TR / EN</div>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container" style="display: flex; align-items: center; flex-wrap: wrap; gap: 40px;">
+        <div class="hero-content">
+            <h1 id="hero-title">Track Fares.<br>Travel Smarter.</h1>
+            <p id="hero-subtitle">The ultimate assistant for public transport users. Manage your cards, track your balance, and analyze your journey costs with ease.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Download App</a>
+                <a href="#features" class="btn" style="background: #e2e8f0; color: #334155;">See Features</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="porsuk_conductor.png" alt="Conductor Badger" style="width: 300px;">
+            <div class="mascot-badge" id="mascot-text">Your friendly conductor!</div>
+        </div>
+    </div>
+</section>
+
+<section class="features" id="features">
+    <div class="container">
+        <div class="section-title">
+            <h2 id="features-title" style="font-size: 2.5rem;">Why Conductor?</h2>
+        </div>
+        <div class="grid">
+            <div class="feature-card">
+                <h3 id="f1-t">Route Analysis</h3>
+                <p id="f1-d">Get detailed insights into your monthly and yearly transport expenses.</p>
+            </div>
+            <div class="feature-card">
+                <h3 id="f2-t">Unlimited Cards</h3>
+                <p id="f2-d">Add as many transit cards as you need and keep them organized in one place.</p>
+            </div>
+            <div class="feature-card">
+                <h3 id="f3-t">Excel Reports</h3>
+                <p id="f3-d">Export your usage data as professional Excel reports for your records.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pricing" id="pricing">
+    <div class="container">
+        <div class="section-title">
+            <h2 id="pricing-title" style="font-size: 2.5rem;">Simple Pricing</h2>
+        </div>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3 id="p1-n">Free</h3>
+                <div class="price">$0<span>/forever</span></div>
+                <ul class="feature-list">
+                    <li id="p1-f1">Basic fare tracking</li>
+                    <li id="p1-f2">Limited cards</li>
+                    <li id="p1-f3">Ad-supported</li>
+                </ul>
+                <a href="#" class="btn" style="border: 1px solid #cbd5e1; width: 80%;">Current Plan</a>
+            </div>
+            <div class="price-card featured" style="border-width: 3px;">
+                <div style="background: var(--primary-color); color: white; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); padding: 4px 20px; border-radius: 20px; font-weight: 700; font-size: 0.8rem;">POPULAR</div>
+                <h3 id="p2-n">Pass Plus</h3>
+                <div class="price">$...<span>/year</span></div>
+                <ul class="feature-list">
+                    <li id="p2-f1">No Ads</li>
+                    <li id="p2-f2">Unlimited cards & favorites</li>
+                    <li id="p2-f3">Export to Excel</li>
+                    <li id="p2-f4">Detailed annual analysis</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width: 80%;">Go Premium</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="privacy/">Privacy Policy</a>
+            <a href="terms-of-use/">Terms of Use</a>
+            <a href="support/">Support</a>
+        </div>
+        <p>&copy; 2026 Burak Çeküç. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    let currentLang = 'en';
+    const content = {
+        tr: {
+            brand: "Kondüktör",
+            features: "Özellikler", pricing: "Paketler", support: "Destek",
+            h_title: "Yol Ücretlerini Takip Et,<br>Akıllıca Seyahat Et.",
+            h_sub: "Toplu taşıma kullanıcıları için en gelişmiş asistan. Kartlarını yönet, bakiyeni takip et ve yolculuk maliyetlerini kolayca analiz et.",
+            m_text: "Sadık kondüktörünüz iş başında!",
+            f_title: "Neden Kondüktör?",
+            f1t: "Rota Analizi", f1d: "Aylık ve yıllık ulaşım giderlerinize dair detaylı içgörüler alın.",
+            f2t: "Sınırsız Kart", f2d: "İhtiyacınız olan tüm kartları ekleyin ve tek bir yerden yönetin.",
+            f3t: "Excel Raporları", f3d: "Kullanım verilerinizi profesyonel Excel raporları olarak dışa aktarın.",
+            p_title: "Basit Paketler",
+            p1n: "Ücretsiz", p1f1: "Temel ücret takibi", p1f2: "Sınırlı kart ekleme", p1f3: "Reklam destekli",
+            p2n: "Pass Plus", p2f1: "Reklamları kaldır", p2f2: "Sınırsız kart ve favoriler", p2f3: "Excel'e aktarma", p2f4: "Detaylı yıllık analizler"
+        },
+        en: {
+            brand: "Conductor",
+            features: "Features", pricing: "Pricing", support: "Support",
+            h_title: "Track Fares.<br>Travel Smarter.",
+            h_sub: "The ultimate assistant for public transport users. Manage your cards, track your balance, and analyze your journey costs with ease.",
+            m_text: "Your friendly conductor!",
+            f_title: "Why Conductor?",
+            f1t: "Route Analysis", f1d: "Get detailed insights into your monthly and yearly transport expenses.",
+            f2t: "Unlimited Cards", f2d: "Add as many transit cards as you need and keep them organized in one place.",
+            f3t: "Excel Reports", f3d: "Export your usage data as professional Excel reports for your records.",
+            p_title: "Simple Pricing",
+            p1n: "Free", p1f1: "Basic fare tracking", p1f2: "Limited cards", p1f3: "Ad-supported",
+            p2n: "Pass Plus", p2f1: "No Ads", p2f2: "Unlimited cards & favorites", p2f3: "Export to Excel", p2f4: "Detailed annual analysis"
+        }
+    };
+
+    function toggleLang() {
+        currentLang = currentLang === 'en' ? 'tr' : 'en';
+        const l = content[currentLang];
+        document.getElementById('brand-name').innerText = l.brand;
+        document.getElementById('nav-features').innerText = l.features;
+        document.getElementById('nav-pricing').innerText = l.pricing;
+        document.getElementById('nav-support').innerText = l.support;
+        document.getElementById('hero-title').innerHTML = l.h_title;
+        document.getElementById('hero-subtitle').innerText = l.h_sub;
+        document.getElementById('mascot-text').innerText = l.m_text;
+        document.getElementById('features-title').innerText = l.f_title;
+        document.getElementById('f1-t').innerText = l.f1t; document.getElementById('f1-d').innerText = l.f1d;
+        document.getElementById('f2-t').innerText = l.f2t; document.getElementById('f2-d').innerText = l.f2d;
+        document.getElementById('f3-t').innerText = l.f3t; document.getElementById('f3-d').innerText = l.f3d;
+        document.getElementById('pricing-title').innerText = l.p_title;
+        document.getElementById('p1-n').innerText = l.p1n; 
+        document.getElementById('p1-f1').innerText = l.p1f1; document.getElementById('p1-f2').innerText = l.p1f2; document.getElementById('p1-f3').innerText = l.p1f3;
+        document.getElementById('p2-n').innerText = l.p2n;
+        document.getElementById('p2-f1').innerText = l.p2f1; document.getElementById('p2-f2').innerText = l.p2f2; document.getElementById('p2-f3').innerText = l.p2f3; document.getElementById('p2-f4').innerText = l.p2f4;
+    }
+</script>
+
+</body>
+</html>
