@@ -1,0 +1,431 @@
+:root {
+    --primary-color: #e61919;
+    --text-color: #ffffff;
+    --bg-color: #0f0f0f;
+    --secondary-bg: #1a1a1a;
+    --accent-glow: rgba(230, 25, 25, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Spline Sans', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 15, 15, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Language Switcher */
+.lang-switcher {
+    display: flex;
+    gap: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    padding-left: 20px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-family: 'Spline Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    color: #fff;
+}
+
+.lang-btn.active {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 5% 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background animated blobs */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    z-index: -1;
+    animation: float 10s infinite ease-in-out;
+}
+
+.blob-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--primary-color);
+    top: -100px;
+    right: -100px;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    width: 300px;
+    height: 300px;
+    background: #ff6b6b;
+    bottom: -50px;
+    left: -50px;
+    animation-delay: 5s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(30px, 50px);
+    }
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 750px;
+    z-index: 10;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 7vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #fff, #ccc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    animation: slideInLeft 0.8s forwards 0.2s;
+    text-wrap: balance;
+    max-width: 750px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: slideInLeft 0.8s forwards 0.4s;
+}
+
+.store-buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    opacity: 0;
+    animation: slideInUp 0.8s forwards 0.6s;
+    flex-wrap: wrap;
+}
+
+.store-btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.store-btn {
+    height: 60px;
+    transition: transform 0.3s, opacity 0.3s;
+    filter: grayscale(100%) opacity(0.6);
+    cursor: not-allowed;
+}
+
+.coming-soon-badge {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* Visual Element (Right Side) */
+.hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.8s;
+}
+
+.phone-mockup {
+    width: 300px;
+    height: 600px;
+    background: #1a1a1a;
+    border: 8px solid #333;
+    border-radius: 50px;
+    position: relative;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.8),
+        inset 0 0 10px rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-10deg);
+    transition: transform 0.5s, box-shadow 0.5s;
+    z-index: 1;
+}
+
+/* Side Buttons */
+.phone-mockup::before,
+.phone-mockup::after {
+    content: '';
+    position: absolute;
+    background: #333;
+    border-radius: 2px;
+}
+
+/* Volume Buttons */
+.phone-mockup::before {
+    width: 3px;
+    height: 60px;
+    left: -11px;
+    top: 100px;
+    box-shadow: 0 40px 0 #333;
+    /* Second button */
+}
+
+/* Power Button */
+.phone-mockup::after {
+    width: 3px;
+    height: 40px;
+    right: -11px;
+    top: 120px;
+}
+
+.phone-mockup:hover {
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+}
+
+.phone-screen {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    background: #000;
+    border-radius: 42px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notch {
+    position: absolute;
+    top: 15px;
+    width: 100px;
+    height: 25px;
+    background: #000;
+    border-radius: 20px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notch::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    margin-left: 50px;
+}
+
+.app-screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Footer */
+footer {
+    padding: 40px 5%;
+    background: var(--secondary-bg);
+    color: #888;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer a {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+        gap: 50px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .store-buttons {
+        justify-content: center;
+    }
+
+    .phone-mockup {
+        width: 260px;
+        height: 520px;
+        transform: rotate(0);
+    }
+
+    .nav-container {
+        display: none;
+        /* Hide nav links on mobile for now */
+    }
+
+    /* Ensure lang switcher is still visible on mobile if desired, or move it */
+    header {
+        justify-content: space-between;
+    }
+
+    .lang-switcher {
+        display: flex;
+        border-left: none;
+        /* remove border on mobile if nav is gone */
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .store-btn {
+        height: 48px;
+    }
+}
