@@ -393,19 +393,28 @@ footer a:hover {
     }
 
     .nav-container {
-        display: none;
-        /* Hide nav links on mobile for now */
+        display: flex;
+        /* Mobilde gizli kalmasın */
+        gap: 15px;
+        /* Mobilde boşluğu daralt */
     }
 
-    /* Ensure lang switcher is still visible on mobile if desired, or move it */
-    header {
-        justify-content: space-between;
+    nav ul {
+        display: none;
+        /* Linkleri gizli tut ama konteyneri göster */
+    }
+
+    /* Eğer linklerin de görünmesini istiyorsan üstteki display:none'ı kaldırabilirsin */
+    /* Destek linkini mobilde göstermek için özel kural: */
+    nav ul {
+        display: flex;
+        gap: 15px;
     }
 
     .lang-switcher {
         display: flex;
-        border-left: none;
-        /* remove border on mobile if nav is gone */
+        padding-left: 10px;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     footer {
