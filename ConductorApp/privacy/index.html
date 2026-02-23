@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QZ2R4CW2ME"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QZ2R4CW2ME');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conductor App - Privacy Policy</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <style>
         :root {
-            --primary-color: #e61919; /* Kurumsal Kırmızı */
+            --primary-color: #e61919;
+            /* Kurumsal Kırmızı */
             --bg-color: #f8fafc;
             --text-color: #334155;
             --heading-color: #000;
@@ -29,7 +41,7 @@
 
         header {
             background: var(--primary-color);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -81,7 +93,7 @@
         .lang-btn.active {
             background: var(--card-bg);
             color: var(--primary-color);
-            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         .content-section {
@@ -94,15 +106,55 @@
             display: block;
         }
 
-        h1 { font-size: 2rem; color: var(--heading-color); margin-bottom: 0.5rem; }
-        .date { font-size: 0.9rem; color: #64748b; margin-bottom: 2rem; display: block; }
-        h2 { font-size: 1.25rem; color: var(--heading-color); margin-top: 2rem; border-left: 4px solid var(--primary-color); padding-left: 10px; }
-        h3 { font-size: 1.1rem; color: var(--heading-color); margin-top: 1rem; }
-        p, ul { margin-bottom: 1rem; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 0.5rem; }
-        a { color: var(--primary-color); text-decoration: none; font-weight: 500; }
-        a:hover { text-decoration: underline; }
+        h1 {
+            font-size: 2rem;
+            color: var(--heading-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .date {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            color: var(--heading-color);
+            margin-top: 2rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: var(--heading-color);
+            margin-top: 1rem;
+        }
+
+        p,
+        ul {
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
 
         .highlight-box {
             background: #ffe0e0;
@@ -123,166 +175,213 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <div class="container nav-wrapper">
-        <div class="brand">
-            <span id="brand-text">Conductor App</span>
-        </div>
-        
-        <div style="display: flex; align-items: center; gap: 20px;">
-            <a href="../support/" id="nav-support" style="color: white; text-decoration: none; font-size: 0.9rem; font-weight: 500;">Support</a>
-            
-            <div class="lang-switch">
-                <button class="lang-btn active" onclick="switchLang('en')">EN</button>
-                <button class="lang-btn" onclick="switchLang('tr')">TR</button>
+    <header>
+        <div class="container nav-wrapper">
+            <div class="brand">
+                <span id="brand-text">Conductor App</span>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <a href="../support/" id="nav-support"
+                    style="color: white; text-decoration: none; font-size: 0.9rem; font-weight: 500;">Support</a>
+
+                <div class="lang-switch">
+                    <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+                    <button class="lang-btn" onclick="switchLang('tr')">TR</button>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<main class="container">
-    
-    <div id="en" class="content-section active">
-        <h1>Privacy Policy</h1>
-        <span class="date">Last updated: February 20, 2026</span>
-        
-        <div class="highlight-box">
-            <strong>Summary:</strong> Conductor: Fare Assistant is designed with privacy in mind. We do not store your personal data on our servers. Certain data is processed by industry-standard third-party partners for functionality, analytics, and advertising.
+    <main class="container">
+
+        <div id="en" class="content-section active">
+            <h1>Privacy Policy</h1>
+            <span class="date">Last updated: February 20, 2026</span>
+
+            <div class="highlight-box">
+                <strong>Summary:</strong> Conductor: Fare Assistant is designed with privacy in mind. We do not store
+                your personal data on our servers. Certain data is processed by industry-standard third-party partners
+                for functionality, analytics, and advertising.
+            </div>
+
+            <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your
+                information when You use the Service and tells You about Your privacy rights and how the law protects
+                You.</p>
+
+            <h2>1. Interpretation and Definitions</h2>
+            <ul>
+                <li><strong>Application:</strong> Refers to Conductor: Fare Assistant, the software program provided by
+                    the individual developer.</li>
+                <li><strong>Service:</strong> Refers to the Application.</li>
+                <li><strong>Device:</strong> Means any device that can access the Service such as a smartphone or a
+                    tablet.</li>
+            </ul>
+
+            <h2>2. Collecting and Using Your Personal Data</h2>
+            <h3>Types of Data Collected</h3>
+            <p>While using Our Application, in order to provide features and improve your experience, the following data
+                may be collected and linked to your identity through third-party services:</p>
+            <ul>
+                <li><strong>Location Data:</strong> Approximately (coarse) location data for localized features and
+                    advertising.</li>
+                <li><strong>Identifiers:</strong> User IDs and Device IDs (such as Advertising ID) for app
+                    functionality, analytics, and tracking.</li>
+                <li><strong>Purchase Data:</strong> Transaction history and subscription status (processed by
+                    RevenueCat).</li>
+                <li><strong>Usage Data:</strong> Information on how you interact with the Service (collected by
+                    Firebase).</li>
+                <li><strong>Diagnostics:</strong> Crash logs and performance statistics to ensure app stability.</li>
+            </ul>
+
+            <h2>3. Third-Party Service Providers and Tracking</h2>
+            <p>We employ third-party companies to facilitate our Service, to perform Service-related services or to
+                assist us in analyzing how our Service is used. These third parties have access to specific Information
+                (Identifiers, Usage Data) only to perform tasks on our behalf.</p>
+            <p>We use providers that may track your activity across other apps and websites for advertising purposes.
+                You can manage these permissions through your device settings.</p>
+            <p>Links to the privacy policies of third-party service providers used by the app:</p>
+            <ul>
+                <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase</a></li>
+                <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a></li>
+                <li><a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a></li>
+            </ul>
+
+            <h2>4. Data Deletion and Security</h2>
+            <p>We do not maintain a private database of your personal identity. Most data is stored locally or managed
+                by the partners listed above. If you wish to request the deletion of data associated with your User ID,
+                please contact us at our support email. We will facilitate the request with our service providers within
+                a reasonable timeframe.</p>
+
+            <h2>5. Children’s Privacy</h2>
+            <p>These Services do not address anyone under the age of 13. We do not knowingly collect personally
+                identifiable information from children under 13.</p>
+
+            <h2>6. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, You can contact us:</p>
+            <ul>
+                <li>By email: <strong>burakcekuc.app@gmail.com</strong></li>
+                <li>By visiting our support page: <a href="../support/" id="contact-support-en">Contact Support</a></li>
+            </ul>
         </div>
 
-        <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
+        <div id="tr" class="content-section">
+            <h1>Gizlilik Politikası</h1>
+            <span class="date">Son güncelleme: 20 Şubat 2026</span>
 
-        <h2>1. Interpretation and Definitions</h2>
-        <ul>
-            <li><strong>Application:</strong> Refers to Conductor: Fare Assistant, the software program provided by the individual developer.</li>
-            <li><strong>Service:</strong> Refers to the Application.</li>
-            <li><strong>Device:</strong> Means any device that can access the Service such as a smartphone or a tablet.</li>
-        </ul>
+            <div class="highlight-box">
+                <strong>Özet:</strong> Kondüktör: Yol Ücreti Asistanı, gizliliğinize önem verecek şekilde
+                tasarlanmıştır. Kişisel verilerinizi kendi sunucularımızda saklamıyoruz. Belirli veriler işlevsellik,
+                analiz ve reklam amaçlı üçüncü taraf ortaklarımız tarafından işlenir.
+            </div>
 
-        <h2>2. Collecting and Using Your Personal Data</h2>
-        <h3>Types of Data Collected</h3>
-        <p>While using Our Application, in order to provide features and improve your experience, the following data may be collected and linked to your identity through third-party services:</p>
-        <ul>
-            <li><strong>Location Data:</strong> Approximately (coarse) location data for localized features and advertising.</li>
-            <li><strong>Identifiers:</strong> User IDs and Device IDs (such as Advertising ID) for app functionality, analytics, and tracking.</li>
-            <li><strong>Purchase Data:</strong> Transaction history and subscription status (processed by RevenueCat).</li>
-            <li><strong>Usage Data:</strong> Information on how you interact with the Service (collected by Firebase).</li>
-            <li><strong>Diagnostics:</strong> Crash logs and performance statistics to ensure app stability.</li>
-        </ul>
+            <p>Bu Gizlilik Politikası, Hizmeti kullandığınızda bilgilerinizin toplanması, kullanılması ve ifşa
+                edilmesine ilişkin politikalarımızı açıklar; gizlilik haklarınız ve yasaların sizi nasıl koruduğu
+                hakkında bilgi verir.</p>
 
-        <h2>3. Third-Party Service Providers and Tracking</h2>
-        <p>We employ third-party companies to facilitate our Service, to perform Service-related services or to assist us in analyzing how our Service is used. These third parties have access to specific Information (Identifiers, Usage Data) only to perform tasks on our behalf.</p>
-        <p>We use providers that may track your activity across other apps and websites for advertising purposes. You can manage these permissions through your device settings.</p>
-        <p>Links to the privacy policies of third-party service providers used by the app:</p>
-        <ul>
-            <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase</a></li>
-            <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a></li>
-            <li><a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a></li>
-        </ul>
+            <h2>1. Tanımlar</h2>
+            <ul>
+                <li><strong>Uygulama:</strong> Bireysel geliştirici tarafından sağlanan yazılım programı olan Kondüktör:
+                    Yol Ücreti Asistanı'nı ifade eder.</li>
+                <li><strong>Hizmet:</strong> Uygulamayı ifade eder.</li>
+                <li><strong>Cihaz:</strong> Akıllı telefon veya tablet gibi Hizmete erişebilen her türlü cihazı ifade
+                    eder.</li>
+            </ul>
 
-        <h2>4. Data Deletion and Security</h2>
-        <p>We do not maintain a private database of your personal identity. Most data is stored locally or managed by the partners listed above. If you wish to request the deletion of data associated with your User ID, please contact us at our support email. We will facilitate the request with our service providers within a reasonable timeframe.</p>
+            <h2>2. Verilerinizin Toplanması ve Kullanımı</h2>
+            <h3>Toplanan Veri Türleri</h3>
+            <p>Uygulamamızı kullanırken, özellikleri sağlamak ve deneyiminizi iyileştirmek amacıyla aşağıdaki veriler
+                üçüncü taraf servisler aracılığıyla toplanabilir ve kimliğinizle ilişkilendirilebilir:</p>
+            <ul>
+                <li><strong>Konum Verileri:</strong> Yerelleştirilmiş özellikler ve reklamlar için yaklaşık (hassas
+                    olmayan) konum verileri.</li>
+                <li><strong>Kimlik Tanımlayıcılar:</strong> Uygulama işlevselliği, analiz ve takip için Kullanıcı ve
+                    Cihaz Kimlikleri (Reklam Kimliği dahil).</li>
+                <li><strong>Satın Alma Verileri:</strong> İşlem geçmişi ve abonelik durumu (RevenueCat tarafından
+                    işlenir).</li>
+                <li><strong>Kullanım Verileri:</strong> Hizmetle nasıl etkileşime girdiğinize dair bilgiler (Firebase
+                    tarafından toplanır).</li>
+                <li><strong>Tanılama:</strong> Uygulama kararlılığını sağlamak için hata günlükleri ve performans
+                    istatistikleri.</li>
+            </ul>
 
-        <h2>5. Children’s Privacy</h2>
-        <p>These Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13.</p>
+            <h2>3. Üçüncü Taraf Hizmet Sağlayıcılar ve Takip</h2>
+            <p>Hizmetimizi kolaylaştırmak veya kullanım analizine yardımcı olmak için üçüncü taraf şirketleri
+                kullanıyoruz. Bu taraflar, yalnızca bizim adımıza görevleri yerine getirmek için belirli bilgilere
+                erişebilirler.</p>
+            <p>Reklam amaçlı olarak diğer uygulamalar genelinde faaliyetlerinizi izleyebilecek sağlayıcılar
+                kullanıyoruz. Bu izinleri cihaz ayarlarınızdan yönetebilirsiniz.</p>
+            <p>Uygulama tarafından kullanılan üçüncü taraf hizmet sağlayıcıların gizlilik politikalarına bağlantılar:
+            </p>
+            <ul>
+                <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase</a></li>
+                <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a></li>
+                <li><a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a></li>
+            </ul>
 
-        <h2>6. Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy, You can contact us:</p>
-        <ul>
-            <li>By email: <strong>burakcekuc.app@gmail.com</strong></li>
-            <li>By visiting our support page: <a href="../support/" id="contact-support-en">Contact Support</a></li>
-        </ul>
-    </div>
+            <h2>4. Veri Silme ve Güvenlik</h2>
+            <p>Kişisel kimlik bilgilerinizden oluşan bir veritabanı tutmuyoruz. Çoğu veri cihazınızda saklanır veya
+                yukarıda listelenen ortaklarca yönetilir. Kullanıcı Kimliğinizle ilişkili verilerin silinmesini talep
+                etmek isterseniz, lütfen destek e-posta adresimizden bizimle iletişime geçin.</p>
 
-    <div id="tr" class="content-section">
-        <h1>Gizlilik Politikası</h1>
-        <span class="date">Son güncelleme: 20 Şubat 2026</span>
+            <h2>5. Çocukların Gizliliği</h2>
+            <p>Bu Hizmetler 13 yaşın altındaki kimseye hitap etmemektedir. Çocuklardan bilerek kişisel veri
+                toplamıyoruz.</p>
 
-        <div class="highlight-box">
-            <strong>Özet:</strong> Kondüktör: Yol Ücreti Asistanı, gizliliğinize önem verecek şekilde tasarlanmıştır. Kişisel verilerinizi kendi sunucularımızda saklamıyoruz. Belirli veriler işlevsellik, analiz ve reklam amaçlı üçüncü taraf ortaklarımız tarafından işlenir.
+            <h2>6. İletişim</h2>
+            <p>Bu Gizlilik Politikası hakkında herhangi bir sorunuz varsa, bizimle iletişime geçebilirsiniz:</p>
+            <ul>
+                <li>E-posta: <strong>burakcekuc.app@gmail.com</strong></li>
+                <li>Destek sayfamız: <a href="../support/" id="contact-support-tr">Destek ile İletişime Geçin</a></li>
+            </ul>
         </div>
 
-        <p>Bu Gizlilik Politikası, Hizmeti kullandığınızda bilgilerinizin toplanması, kullanılması ve ifşa edilmesine ilişkin politikalarımızı açıklar; gizlilik haklarınız ve yasaların sizi nasıl koruduğu hakkında bilgi verir.</p>
+    </main>
 
-        <h2>1. Tanımlar</h2>
-        <ul>
-            <li><strong>Uygulama:</strong> Bireysel geliştirici tarafından sağlanan yazılım programı olan Kondüktör: Yol Ücreti Asistanı'nı ifade eder.</li>
-            <li><strong>Hizmet:</strong> Uygulamayı ifade eder.</li>
-            <li><strong>Cihaz:</strong> Akıllı telefon veya tablet gibi Hizmete erişebilen her türlü cihazı ifade eder.</li>
-        </ul>
+    <footer>
+        <div class="container">
+            &copy; 2026 Burak Çeküç. All rights reserved.
+        </div>
+    </footer>
 
-        <h2>2. Verilerinizin Toplanması ve Kullanımı</h2>
-        <h3>Toplanan Veri Türleri</h3>
-        <p>Uygulamamızı kullanırken, özellikleri sağlamak ve deneyiminizi iyileştirmek amacıyla aşağıdaki veriler üçüncü taraf servisler aracılığıyla toplanabilir ve kimliğinizle ilişkilendirilebilir:</p>
-        <ul>
-            <li><strong>Konum Verileri:</strong> Yerelleştirilmiş özellikler ve reklamlar için yaklaşık (hassas olmayan) konum verileri.</li>
-            <li><strong>Kimlik Tanımlayıcılar:</strong> Uygulama işlevselliği, analiz ve takip için Kullanıcı ve Cihaz Kimlikleri (Reklam Kimliği dahil).</li>
-            <li><strong>Satın Alma Verileri:</strong> İşlem geçmişi ve abonelik durumu (RevenueCat tarafından işlenir).</li>
-            <li><strong>Kullanım Verileri:</strong> Hizmetle nasıl etkileşime girdiğinize dair bilgiler (Firebase tarafından toplanır).</li>
-            <li><strong>Tanılama:</strong> Uygulama kararlılığını sağlamak için hata günlükleri ve performans istatistikleri.</li>
-        </ul>
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            const buttons = document.querySelectorAll('.lang-btn');
+            if (lang === 'en') buttons[0].classList.add('active');
+            else buttons[1].classList.add('active');
 
-        <h2>3. Üçüncü Taraf Hizmet Sağlayıcılar ve Takip</h2>
-        <p>Hizmetimizi kolaylaştırmak veya kullanım analizine yardımcı olmak için üçüncü taraf şirketleri kullanıyoruz. Bu taraflar, yalnızca bizim adımıza görevleri yerine getirmek için belirli bilgilere erişebilirler.</p>
-        <p>Reklam amaçlı olarak diğer uygulamalar genelinde faaliyetlerinizi izleyebilecek sağlayıcılar kullanıyoruz. Bu izinleri cihaz ayarlarınızdan yönetebilirsiniz.</p>
-        <p>Uygulama tarafından kullanılan üçüncü taraf hizmet sağlayıcıların gizlilik politikalarına bağlantılar:</p>
-        <ul>
-            <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase</a></li>
-            <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a></li>
-            <li><a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a></li>
-        </ul>
+            document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+            document.getElementById(lang).classList.add('active');
 
-        <h2>4. Veri Silme ve Güvenlik</h2>
-        <p>Kişisel kimlik bilgilerinizden oluşan bir veritabanı tutmuyoruz. Çoğu veri cihazınızda saklanır veya yukarıda listelenen ortaklarca yönetilir. Kullanıcı Kimliğinizle ilişkili verilerin silinmesini talep etmek isterseniz, lütfen destek e-posta adresimizden bizimle iletişime geçin.</p>
+            const brandText = document.getElementById('brand-text');
+            const navSupport = document.getElementById('nav-support');
 
-        <h2>5. Çocukların Gizliliği</h2>
-        <p>Bu Hizmetler 13 yaşın altındaki kimseye hitap etmemektedir. Çocuklardan bilerek kişisel veri toplamıyoruz.</p>
-
-        <h2>6. İletişim</h2>
-        <p>Bu Gizlilik Politikası hakkında herhangi bir sorunuz varsa, bizimle iletişime geçebilirsiniz:</p>
-        <ul>
-            <li>E-posta: <strong>burakcekuc.app@gmail.com</strong></li>
-            <li>Destek sayfamız: <a href="../support/" id="contact-support-tr">Destek ile İletişime Geçin</a></li>
-        </ul>
-    </div>
-
-</main>
-
-<footer>
-    <div class="container">
-        &copy; 2026 Burak Çeküç. All rights reserved.
-    </div>
-</footer>
-
-<script>
-    function switchLang(lang) {
-        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-        const buttons = document.querySelectorAll('.lang-btn');
-        if(lang === 'en') buttons[0].classList.add('active');
-        else buttons[1].classList.add('active');
-
-        document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
-        document.getElementById(lang).classList.add('active');
-
-        const brandText = document.getElementById('brand-text');
-        const navSupport = document.getElementById('nav-support');
-        
-        if(lang === 'tr') {
-            brandText.innerText = 'Kondüktör App';
-            navSupport.innerText = 'Destek';
-        } else {
-            brandText.innerText = 'Conductor App';
-            navSupport.innerText = 'Support';
+            if (lang === 'tr') {
+                brandText.innerText = 'Kondüktör App';
+                navSupport.innerText = 'Destek';
+            } else {
+                brandText.innerText = 'Conductor App';
+                navSupport.innerText = 'Support';
+            }
         }
-    }
-</script>
+    </script>
 
 </body>
+
 </html>
