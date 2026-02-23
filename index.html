@@ -10,6 +10,20 @@
         gtag('js', new Date());
 
         gtag('config', 'G-QZ2R4CW2ME');
+
+        // Global Click Tracking for Buttons and Links
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('a, button');
+            if (target) {
+                const label = target.innerText.trim() || target.getAttribute('aria-label') || target.id || target.name || 'unlabeled';
+                gtag('event', 'ui_click', {
+                    'element_text': label.substring(0, 40),
+                    'element_type': target.tagName.toLowerCase(),
+                    'element_id': target.id || 'none',
+                    'link_url': target.href || 'none'
+                });
+            }
+        }, true);
     </script>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />

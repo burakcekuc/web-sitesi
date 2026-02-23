@@ -10,6 +10,20 @@
         gtag('js', new Date());
 
         gtag('config', 'G-QZ2R4CW2ME');
+
+        // Global Click Tracking for Buttons and Links
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('a, button');
+            if (target) {
+                const label = target.innerText.trim() || target.getAttribute('aria-label') || target.id || target.name || 'unlabeled';
+                gtag('event', 'ui_click', {
+                    'element_text': label.substring(0, 40),
+                    'element_type': target.tagName.toLowerCase(),
+                    'element_id': target.id || 'none',
+                    'link_url': target.href || 'none'
+                });
+            }
+        }, true);
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -263,7 +277,8 @@
 
             <h2>7. Contact Us</h2>
             <p>If you have any questions or suggestions about our Terms of Use, do not hesitate to contact us at
-                <strong>burakcekuc.app@gmail.com</strong>.</p>
+                <strong>burakcekuc.app@gmail.com</strong>.
+            </p>
             <p>Apple Standard EULA: <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
                     target="_blank">View Here</a></p>
         </div>
@@ -313,7 +328,8 @@
             <h2>5. Dağıtıcı Platformlar (Sorumluluk Reddi)</h2>
             <p>Apple ve Google bu uygulamada yalnızca "Distribütör" (Dağıtıcı) olarak yer almaktadır.
                 <strong>Apple/Google, bu uygulamanın içeriğinden, bakımından veya destek hizmetlerinden sorumlu
-                    değildir.</strong> Tüm sorumluluk geliştiriciye aittir.</p>
+                    değildir.</strong> Tüm sorumluluk geliştiriciye aittir.
+            </p>
 
             <h2>6. Değişiklikler</h2>
             <p>Hüküm ve Koşullarımızı zaman zaman güncelleyebiliriz. Bu nedenle, herhangi bir değişiklik için bu sayfayı
@@ -321,7 +337,8 @@
 
             <h2>7. İletişim</h2>
             <p>Kullanım Koşullarımız hakkında herhangi bir sorunuz varsa, bizimle iletişime geçmekten çekinmeyin:
-                <strong>burakcekuc.app@gmail.com</strong>.</p>
+                <strong>burakcekuc.app@gmail.com</strong>.
+            </p>
             <p>Apple Standart EULA (Son Kullanıcı Lisans Sözleşmesi): <a
                     href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">Buradan
                     İnceleyin</a></p>
