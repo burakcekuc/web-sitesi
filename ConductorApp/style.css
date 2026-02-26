@@ -195,6 +195,15 @@ nav a:hover {
     cursor: not-allowed;
 }
 
+.store-btn.available {
+    filter: none;
+    cursor: pointer;
+}
+
+.store-btn.available:hover {
+    transform: scale(1.05);
+}
+
 .coming-soon-badge {
     margin-top: 8px;
     font-size: 0.8rem;
@@ -203,6 +212,10 @@ nav a:hover {
     text-transform: uppercase;
     letter-spacing: 1px;
     opacity: 0.8;
+}
+
+.coming-soon-badge.available {
+    color: #22c55e;
 }
 
 /* Visual Element (Right Side) */
