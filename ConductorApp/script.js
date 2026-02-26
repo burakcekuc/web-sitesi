@@ -3,7 +3,7 @@ const translations = {
         appName: "Kondüktör App",
         navSupport: "Destek",
         heroTitle: "Ulaşım Bütçeni Akıllıca Yönet",
-        heroDesc: "Kondüktör App ile ulaşım bütçeni kolayca yönet. Tüm yolculuk masraflarını takip et, harcamalarını analiz et ve ulaşım giderlerini kontrol altında tut. Çok yakında App Store ve Google Play'de.",
+        heroDesc: "Kondüktör App ile ulaşım bütçeni kolayca yönet. Tüm yolculuk masraflarını takip et, harcamalarını analiz et ve ulaşım giderlerini kontrol altında tut. Artık App Store'da yayında, çok yakında Google Play'de.",
         appStoreBadge: "Yayında",
         googlePlayBadge: "Çok Yakında",
         appStoreLink: "https://apps.apple.com/tr/app/conductor-fare-assistant/id6758008397?l=tr",
@@ -17,7 +17,7 @@ const translations = {
         appName: "Conductor App",
         navSupport: "Support",
         heroTitle: "Manage Your Transport Budget Smarter",
-        heroDesc: "Manage your transportation budget easily with Conductor App. Track all your travel expenses, analyze your spending, and keep your transport costs under control. Coming soon to App Store and Google Play.",
+        heroDesc: "Manage your transportation budget easily with Conductor App. Track all your travel expenses, analyze your spending, and keep your transport costs under control. Now available on the App Store, coming soon to Google Play.",
         appStoreBadge: "Available Now",
         googlePlayBadge: "Coming Soon",
         appStoreLink: "https://apps.apple.com/us/app/conductor-fare-assistant/id6758008397",
@@ -46,10 +46,10 @@ function setLanguage(lang) {
 
     const appStoreBadge = document.getElementById('badge-appstore');
     if (appStoreBadge) appStoreBadge.textContent = translations[lang].appStoreBadge;
-    
+
     const googlePlayBadge = document.getElementById('badge-googleplay');
     if (googlePlayBadge) googlePlayBadge.textContent = translations[lang].googlePlayBadge;
-    
+
     const appStoreLink = document.getElementById('link-appstore');
     if (appStoreLink) appStoreLink.href = translations[lang].appStoreLink;
 
