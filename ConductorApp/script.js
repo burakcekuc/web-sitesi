@@ -3,10 +3,9 @@ const translations = {
         appName: "Kondüktör App",
         navSupport: "Destek",
         heroTitle: "Ulaşım Bütçeni Akıllıca Yönet",
-        heroDesc: "Kondüktör App ile ulaşım bütçeni kolayca yönet. Tüm yolculuk masraflarını takip et, harcamalarını analiz et ve ulaşım giderlerini kontrol altında tut. Artık App Store'da yayında, çok yakında Google Play'de.",
-        appStoreBadge: "Yayında",
-        googlePlayBadge: "Çok Yakında",
+        heroDesc: "Kondüktör App ile ulaşım bütçeni kolayca yönet. Tüm yolculuk masraflarını takip et, harcamalarını analiz et ve ulaşım giderlerini kontrol altında tut. Hemen App Store veya Google Play'den indirin!",
         appStoreLink: "https://apps.apple.com/tr/app/conductor-fare-assistant/id6758008397?l=tr",
+        googlePlayLink: "https://play.google.com/store/apps/details?id=com.burakcekuc.conductor",
         appStoreImg: "img/app_store_tr.png",
         googlePlayImg: "img/google_play_tr.png",
         copyright: "© 2026 Burak Çeküç Tüm hakları saklıdır.",
@@ -17,10 +16,9 @@ const translations = {
         appName: "Conductor App",
         navSupport: "Support",
         heroTitle: "Manage Your Transport Budget Smarter",
-        heroDesc: "Manage your transportation budget easily with Conductor App. Track all your travel expenses, analyze your spending, and keep your transport costs under control. Now available on the App Store, coming soon to Google Play.",
-        appStoreBadge: "Available Now",
-        googlePlayBadge: "Coming Soon",
+        heroDesc: "Manage your transportation budget easily with Conductor App. Track all your travel expenses, analyze your spending, and keep your transport costs under control. Download now from the App Store or Google Play!",
         appStoreLink: "https://apps.apple.com/us/app/conductor-fare-assistant/id6758008397",
+        googlePlayLink: "https://play.google.com/store/apps/details?id=com.burakcekuc.conductor",
         appStoreImg: "img/app_store_en.png",
         googlePlayImg: "img/google_play_en.png",
         copyright: "© 2026 Burak Çeküç All rights reserved.",
@@ -44,14 +42,11 @@ function setLanguage(lang) {
     document.getElementById('hero-title').textContent = translations[lang].heroTitle;
     document.getElementById('hero-desc').textContent = translations[lang].heroDesc;
 
-    const appStoreBadge = document.getElementById('badge-appstore');
-    if (appStoreBadge) appStoreBadge.textContent = translations[lang].appStoreBadge;
-
-    const googlePlayBadge = document.getElementById('badge-googleplay');
-    if (googlePlayBadge) googlePlayBadge.textContent = translations[lang].googlePlayBadge;
-
     const appStoreLink = document.getElementById('link-appstore');
     if (appStoreLink) appStoreLink.href = translations[lang].appStoreLink;
+
+    const googlePlayLink = document.getElementById('link-googleplay');
+    if (googlePlayLink) googlePlayLink.href = translations[lang].googlePlayLink;
 
     document.getElementById('copyright').textContent = translations[lang].copyright;
     document.getElementById('link-privacy').textContent = translations[lang].privacy;
