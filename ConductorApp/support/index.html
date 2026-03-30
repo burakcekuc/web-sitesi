@@ -65,7 +65,6 @@
 
         .container {
             max-width: 600px;
-            /* Form sayfası daha dar olsun */
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -83,31 +82,18 @@
             text-decoration: none;
         }
 
-        .lang-switch {
-            display: flex;
-            gap: 5px;
-            background: #e2e8f0;
-            padding: 4px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .lang-btn {
-            padding: 4px 12px;
+        .lang-select {
+            padding: 6px 12px;
             border-radius: 6px;
             font-size: 0.85rem;
             font-weight: 600;
             border: none;
-            background: transparent;
-            color: #64748b;
-            transition: all 0.3s ease;
+            background: #e2e8f0;
+            color: #334155;
+            cursor: pointer;
             font-family: 'Spline Sans', sans-serif;
-        }
-
-        .lang-btn.active {
-            background: var(--card-bg);
-            color: var(--primary-color);
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            outline: none;
+            width: auto;
         }
 
         /* Form Styling */
@@ -151,7 +137,6 @@
             font-family: 'Spline Sans', sans-serif;
             font-size: 1rem;
             box-sizing: border-box;
-            /* Padding taşmasını önler */
             transition: border-color 0.3s;
         }
 
@@ -179,7 +164,6 @@
             background: #cc0000;
         }
 
-        /* Gizlilik Linki */
         .privacy-link {
             display: block;
             text-align: center;
@@ -211,10 +195,12 @@
             <a href="#" class="brand">
                 <span id="brand-text">Conductor App Support</span>
             </a>
-            <div class="lang-switch">
-                <button class="lang-btn active" onclick="switchLang('en')">EN</button>
-                <button class="lang-btn" onclick="switchLang('tr')">TR</button>
-            </div>
+            <select class="lang-select" id="lang-select">
+                <option value="en">EN</option>
+                <option value="tr">TR</option>
+                <option value="es">ES</option>
+                <option value="fr">FR</option>
+            </select>
         </div>
     </header>
 
@@ -270,63 +256,109 @@
     </footer>
 
     <script>
-        function switchLang(lang) {
-            // Butonları güncelle
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            const buttons = document.querySelectorAll('.lang-btn');
-            if (lang === 'en') buttons[0].classList.add('active');
-            else buttons[1].classList.add('active');
-
-            // Metinleri Güncelle
-            if (lang === 'tr') {
-                document.getElementById('brand-text').innerText = 'Kondüktör App Destek';
-                document.getElementById('page-title').innerText = 'Destek ile İletişime Geçin';
-                document.getElementById('page-desc').innerText = 'Bir sorunuz veya geri bildiriminiz mi var? Formu doldurun, size en kısa sürede dönüş yapalım.';
-
-                document.getElementById('label-name').innerText = 'Ad Soyad';
-                document.getElementById('name').placeholder = 'Adınız Soyadınız';
-
-                document.getElementById('label-email').innerText = 'E-posta Adresi';
-                document.getElementById('email').placeholder = 'ornek@email.com';
-
-                document.getElementById('label-subject').innerText = 'Konu';
-                // Select box seçeneklerini güncelle
-                const select = document.getElementById('subject');
-                select.options[0].text = 'Geri Bildirim / Öneri';
-                select.options[1].text = 'Hata Bildirimi';
-                select.options[2].text = 'Diğer';
-
-                document.getElementById('label-message').innerText = 'Mesajınız';
-                document.getElementById('message').placeholder = 'Size nasıl yardımcı olabiliriz?';
-
-                document.getElementById('btn-submit').innerText = 'Mesajı Gönder';
-                document.getElementById('privacy-note').innerText = 'Gizliliğinize saygı duyuyoruz.';
-                document.getElementById('privacy-anchor').innerText = 'Gizlilik Politikasını Oku';
-            } else {
-                document.getElementById('brand-text').innerText = 'Conductor App Support';
-                document.getElementById('page-title').innerText = 'Contact Support';
-                document.getElementById('page-desc').innerText = 'Have a question or feedback? Fill out the form below and we\'ll get back to you as soon as possible.';
-
-                document.getElementById('label-name').innerText = 'Full Name';
-                document.getElementById('name').placeholder = 'John Doe';
-
-                document.getElementById('label-email').innerText = 'Email Address';
-                document.getElementById('email').placeholder = 'john@example.com';
-
-                document.getElementById('label-subject').innerText = 'Subject';
-                const select = document.getElementById('subject');
-                select.options[0].text = 'Feedback / Suggestion';
-                select.options[1].text = 'Report a Bug';
-                select.options[2].text = 'Other';
-
-                document.getElementById('label-message').innerText = 'Message';
-                document.getElementById('message').placeholder = 'How can we help you?';
-
-                document.getElementById('btn-submit').innerText = 'Send Message';
-                document.getElementById('privacy-note').innerText = 'We respect your privacy.';
-                document.getElementById('privacy-anchor').innerText = 'Read Privacy Policy';
+        const supportTexts = {
+            en: {
+                brand: 'Conductor App Support',
+                title: 'Contact Support',
+                desc: "Have a question or feedback? Fill out the form below and we'll get back to you as soon as possible.",
+                labelName: 'Full Name',
+                namePlaceholder: 'John Doe',
+                labelEmail: 'Email Address',
+                emailPlaceholder: 'john@example.com',
+                labelSubject: 'Subject',
+                subjectOptions: ['Feedback / Suggestion', 'Report a Bug', 'Other'],
+                labelMessage: 'Message',
+                messagePlaceholder: 'How can we help you?',
+                btnSubmit: 'Send Message',
+                privacyNote: 'We respect your privacy.',
+                privacyAnchor: 'Read Privacy Policy'
+            },
+            tr: {
+                brand: 'Kondüktör App Destek',
+                title: 'Destek ile İletişime Geçin',
+                desc: 'Bir sorunuz veya geri bildiriminiz mi var? Formu doldurun, size en kısa sürede dönüş yapalım.',
+                labelName: 'Ad Soyad',
+                namePlaceholder: 'Adınız Soyadınız',
+                labelEmail: 'E-posta Adresi',
+                emailPlaceholder: 'ornek@email.com',
+                labelSubject: 'Konu',
+                subjectOptions: ['Geri Bildirim / Öneri', 'Hata Bildirimi', 'Diğer'],
+                labelMessage: 'Mesajınız',
+                messagePlaceholder: 'Size nasıl yardımcı olabiliriz?',
+                btnSubmit: 'Mesajı Gönder',
+                privacyNote: 'Gizliliğinize saygı duyuyoruz.',
+                privacyAnchor: 'Gizlilik Politikasını Oku'
+            },
+            es: {
+                brand: 'Revisor App Soporte',
+                title: 'Contactar con Soporte',
+                desc: '¿Tienes alguna pregunta o comentario? Rellena el formulario a continuación y nos pondremos en contacto contigo lo antes posible.',
+                labelName: 'Nombre Completo',
+                namePlaceholder: 'Juan García',
+                labelEmail: 'Correo Electrónico',
+                emailPlaceholder: 'juan@ejemplo.com',
+                labelSubject: 'Asunto',
+                subjectOptions: ['Comentarios / Sugerencias', 'Reportar un Error', 'Otro'],
+                labelMessage: 'Mensaje',
+                messagePlaceholder: '¿En qué podemos ayudarte?',
+                btnSubmit: 'Enviar Mensaje',
+                privacyNote: 'Respetamos tu privacidad.',
+                privacyAnchor: 'Leer Política de Privacidad'
+            },
+            fr: {
+                brand: 'Contrôleur App Support',
+                title: 'Contacter le Support',
+                desc: "Vous avez une question ou un commentaire ? Remplissez le formulaire ci-dessous et nous vous répondrons dès que possible.",
+                labelName: 'Nom Complet',
+                namePlaceholder: 'Jean Dupont',
+                labelEmail: 'Adresse E-mail',
+                emailPlaceholder: 'jean@exemple.com',
+                labelSubject: 'Sujet',
+                subjectOptions: ['Commentaires / Suggestion', 'Signaler un Bug', 'Autre'],
+                labelMessage: 'Message',
+                messagePlaceholder: 'Comment pouvons-nous vous aider ?',
+                btnSubmit: 'Envoyer le Message',
+                privacyNote: 'Nous respectons votre vie privée.',
+                privacyAnchor: 'Lire la Politique de Confidentialité'
             }
+        };
+
+        function switchLang(lang) {
+            const t = supportTexts[lang] || supportTexts.en;
+
+            document.getElementById('lang-select').value = lang;
+            document.getElementById('brand-text').innerText = t.brand;
+            document.getElementById('page-title').innerText = t.title;
+            document.getElementById('page-desc').innerText = t.desc;
+
+            document.getElementById('label-name').innerText = t.labelName;
+            document.getElementById('name').placeholder = t.namePlaceholder;
+
+            document.getElementById('label-email').innerText = t.labelEmail;
+            document.getElementById('email').placeholder = t.emailPlaceholder;
+
+            document.getElementById('label-subject').innerText = t.labelSubject;
+            const select = document.getElementById('subject');
+            select.options[0].text = t.subjectOptions[0];
+            select.options[1].text = t.subjectOptions[1];
+            select.options[2].text = t.subjectOptions[2];
+
+            document.getElementById('label-message').innerText = t.labelMessage;
+            document.getElementById('message').placeholder = t.messagePlaceholder;
+
+            document.getElementById('btn-submit').innerText = t.btnSubmit;
+            document.getElementById('privacy-note').innerText = t.privacyNote;
+            document.getElementById('privacy-anchor').innerText = t.privacyAnchor;
+
+            localStorage.setItem('conductor-lang', lang);
+            document.documentElement.lang = lang;
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('conductor-lang') || 'en';
+            switchLang(savedLang);
+            document.getElementById('lang-select').addEventListener('change', e => switchLang(e.target.value));
+        });
     </script>
 
 </body>

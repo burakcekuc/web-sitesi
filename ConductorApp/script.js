@@ -24,19 +24,39 @@ const translations = {
         copyright: "© 2026 Burak Çeküç All rights reserved.",
         privacy: "Privacy Policy",
         terms: "Terms of Use"
+    },
+    es: {
+        appName: "Revisor App",
+        navSupport: "Soporte",
+        heroTitle: "Gestiona tu Presupuesto de Transporte con Inteligencia",
+        heroDesc: "Gestiona fácilmente tu presupuesto de transporte con Revisor App. Realiza un seguimiento de todos tus gastos de viaje, analiza tus gastos y mantén bajo control tus costos de transporte. ¡Descárgalo ahora desde App Store o Google Play!",
+        appStoreLink: "https://apps.apple.com/us/app/conductor-fare-assistant/id6758008397",
+        googlePlayLink: "https://play.google.com/store/apps/details?id=com.burakcekuc.conductor",
+        appStoreImg: "img/app_store_en.png",
+        googlePlayImg: "img/google_play_en.png",
+        copyright: "© 2026 Burak Çeküç Todos los derechos reservados.",
+        privacy: "Política de Privacidad",
+        terms: "Términos de Uso"
+    },
+    fr: {
+        appName: "Contrôleur App",
+        navSupport: "Support",
+        heroTitle: "Gérez Votre Budget Transport Plus Intelligemment",
+        heroDesc: "Gérez facilement votre budget de transport avec Contrôleur App. Suivez toutes vos dépenses de voyage, analysez vos dépenses et gardez vos coûts de transport sous contrôle. Téléchargez maintenant sur l'App Store ou Google Play !",
+        appStoreLink: "https://apps.apple.com/us/app/conductor-fare-assistant/id6758008397",
+        googlePlayLink: "https://play.google.com/store/apps/details?id=com.burakcekuc.conductor",
+        appStoreImg: "img/app_store_en.png",
+        googlePlayImg: "img/google_play_en.png",
+        copyright: "© 2026 Burak Çeküç Tous droits réservés.",
+        privacy: "Politique de Confidentialité",
+        terms: "Conditions d'Utilisation"
     }
 };
 
 function setLanguage(lang) {
-    // Update active button state
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.dataset.lang === lang) {
-            btn.classList.add('active');
-        }
-    });
+    const select = document.getElementById('lang-select');
+    if (select) select.value = lang;
 
-    // Update text content
     document.getElementById('app-name').textContent = translations[lang].appName;
     document.getElementById('nav-support').textContent = translations[lang].navSupport;
     document.getElementById('hero-title').textContent = translations[lang].heroTitle;
@@ -52,25 +72,18 @@ function setLanguage(lang) {
     document.getElementById('link-privacy').textContent = translations[lang].privacy;
     document.getElementById('link-terms').textContent = translations[lang].terms;
 
-    // Update images
     document.getElementById('btn-appstore').src = translations[lang].appStoreImg;
     document.getElementById('btn-googleplay').src = translations[lang].googlePlayImg;
 
-    // Save preference
     localStorage.setItem('conductor-lang', lang);
     document.documentElement.lang = lang;
 }
 
-// Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    // Default language is 'en' if no preference is saved
     const savedLang = localStorage.getItem('conductor-lang') || 'en';
     setLanguage(savedLang);
 
-    // Event listeners
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            setLanguage(btn.dataset.lang);
-        });
+    document.getElementById('lang-select').addEventListener('change', (e) => {
+        setLanguage(e.target.value);
     });
 });

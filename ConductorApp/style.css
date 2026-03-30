@@ -66,31 +66,27 @@ nav a:hover {
 }
 
 /* Language Switcher */
-.lang-switcher {
-    display: flex;
-    gap: 10px;
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
-    padding-left: 20px;
-}
-
-.lang-btn {
-    background: none;
-    border: none;
-    color: #888;
+.lang-select {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
     cursor: pointer;
     font-family: 'Spline Sans', sans-serif;
-    font-weight: 600;
-    font-size: 0.9rem;
-    padding: 5px;
-    transition: all 0.3s ease;
+    outline: none;
+    margin-left: 20px;
 }
 
-.lang-btn:hover {
+.lang-select:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.lang-select option {
+    background: #1a1a1a;
     color: #fff;
-}
-
-.lang-btn.active {
-    color: var(--primary-color);
 }
 
 /* Hero Section */
@@ -424,10 +420,8 @@ footer a:hover {
         gap: 15px;
     }
 
-    .lang-switcher {
-        display: flex;
-        padding-left: 10px;
-        border-left: 1px solid rgba(255, 255, 255, 0.1);
+    .lang-select {
+        margin-left: 10px;
     }
 
     footer {

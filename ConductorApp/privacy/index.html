@@ -37,7 +37,6 @@
     <style>
         :root {
             --primary-color: #e61919;
-            /* Kurumsal Kırmızı */
             --bg-color: #f8fafc;
             --text-color: #334155;
             --heading-color: #000;
@@ -83,31 +82,17 @@
             gap: 10px;
         }
 
-        .lang-switch {
-            display: flex;
-            gap: 5px;
-            background: #e2e8f0;
-            padding: 4px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .lang-btn {
-            padding: 4px 12px;
+        .lang-select {
+            padding: 6px 12px;
             border-radius: 6px;
             font-size: 0.85rem;
             font-weight: 600;
             border: none;
-            background: transparent;
-            color: #64748b;
-            transition: all 0.3s ease;
+            background: #e2e8f0;
+            color: #334155;
+            cursor: pointer;
             font-family: 'Spline Sans', sans-serif;
-        }
-
-        .lang-btn.active {
-            background: var(--card-bg);
-            color: var(--primary-color);
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            outline: none;
         }
 
         .content-section {
@@ -214,17 +199,20 @@
                 <a href="../support/" id="nav-support"
                     style="color: white; text-decoration: none; font-size: 0.9rem; font-weight: 500;">Support</a>
 
-                <div class="lang-switch">
-                    <button class="lang-btn active" onclick="switchLang('en')">EN</button>
-                    <button class="lang-btn" onclick="switchLang('tr')">TR</button>
-                </div>
+                <select class="lang-select" id="lang-select">
+                    <option value="en">EN</option>
+                    <option value="tr">TR</option>
+                    <option value="es">ES</option>
+                    <option value="fr">FR</option>
+                </select>
             </div>
         </div>
     </header>
 
     <main class="container">
 
-        <div id="en" class="content-section active">
+        <!-- ENGLISH -->
+        <div id="en" class="content-section">
             <h1>Privacy Policy</h1>
             <span class="date">Last updated: February 20, 2026</span>
 
@@ -282,7 +270,7 @@
                 please contact us at our support email. We will facilitate the request with our service providers within
                 a reasonable timeframe.</p>
 
-            <h2>5. Children’s Privacy</h2>
+            <h2>5. Children's Privacy</h2>
             <p>These Services do not address anyone under the age of 13. We do not knowingly collect personally
                 identifiable information from children under 13.</p>
 
@@ -290,10 +278,11 @@
             <p>If you have any questions about this Privacy Policy, You can contact us:</p>
             <ul>
                 <li>By email: <strong>burakcekuc.app@gmail.com</strong></li>
-                <li>By visiting our support page: <a href="../support/" id="contact-support-en">Contact Support</a></li>
+                <li>By visiting our support page: <a href="../support/">Contact Support</a></li>
             </ul>
         </div>
 
+        <!-- TURKISH -->
         <div id="tr" class="content-section">
             <h1>Gizlilik Politikası</h1>
             <span class="date">Son güncelleme: 20 Şubat 2026</span>
@@ -361,7 +350,157 @@
             <p>Bu Gizlilik Politikası hakkında herhangi bir sorunuz varsa, bizimle iletişime geçebilirsiniz:</p>
             <ul>
                 <li>E-posta: <strong>burakcekuc.app@gmail.com</strong></li>
-                <li>Destek sayfamız: <a href="../support/" id="contact-support-tr">Destek ile İletişime Geçin</a></li>
+                <li>Destek sayfamız: <a href="../support/">Destek ile İletişime Geçin</a></li>
+            </ul>
+        </div>
+
+        <!-- SPANISH -->
+        <div id="es" class="content-section">
+            <h1>Política de Privacidad</h1>
+            <span class="date">Última actualización: 20 de febrero de 2026</span>
+
+            <div class="highlight-box">
+                <strong>Resumen:</strong> Revisor: Asistente de Tarifas está diseñado pensando en tu privacidad. No
+                almacenamos tus datos personales en nuestros servidores. Ciertos datos son procesados por socios
+                externos estándar del sector para funcionalidad, análisis y publicidad.
+            </div>
+
+            <p>Esta Política de Privacidad describe nuestras políticas y procedimientos sobre la recopilación, uso y
+                divulgación de tu información cuando utilizas el Servicio, y te informa sobre tus derechos de
+                privacidad y cómo te protege la ley.</p>
+
+            <h2>1. Interpretación y Definiciones</h2>
+            <ul>
+                <li><strong>Aplicación:</strong> Se refiere a Revisor: Asistente de Tarifas, el programa de software
+                    proporcionado por el desarrollador individual.</li>
+                <li><strong>Servicio:</strong> Se refiere a la Aplicación.</li>
+                <li><strong>Dispositivo:</strong> Cualquier dispositivo que pueda acceder al Servicio, como un
+                    smartphone o una tablet.</li>
+            </ul>
+
+            <h2>2. Recopilación y Uso de Tus Datos Personales</h2>
+            <h3>Tipos de Datos Recopilados</h3>
+            <p>Al usar nuestra Aplicación, para proporcionar funciones y mejorar tu experiencia, los siguientes datos
+                pueden ser recopilados y vinculados a tu identidad a través de servicios de terceros:</p>
+            <ul>
+                <li><strong>Datos de Ubicación:</strong> Datos de ubicación aproximada (general) para funciones
+                    localizadas y publicidad.</li>
+                <li><strong>Identificadores:</strong> ID de usuario e ID de dispositivo (como el ID de publicidad) para
+                    la funcionalidad de la app, análisis y seguimiento.</li>
+                <li><strong>Datos de Compra:</strong> Historial de transacciones y estado de suscripción (procesado por
+                    RevenueCat).</li>
+                <li><strong>Datos de Uso:</strong> Información sobre cómo interactúas con el Servicio (recopilado por
+                    Firebase).</li>
+                <li><strong>Diagnóstico:</strong> Registros de fallos y estadísticas de rendimiento para garantizar la
+                    estabilidad de la app.</li>
+            </ul>
+
+            <h2>3. Proveedores de Servicios de Terceros y Seguimiento</h2>
+            <p>Empleamos empresas de terceros para facilitar nuestro Servicio, realizar servicios relacionados con el
+                Servicio o ayudarnos a analizar cómo se utiliza nuestro Servicio. Estos terceros tienen acceso a
+                información específica (Identificadores, Datos de Uso) solo para realizar tareas en nuestro nombre.</p>
+            <p>Utilizamos proveedores que pueden rastrear tu actividad en otras apps y sitios web con fines
+                publicitarios. Puedes gestionar estos permisos a través de la configuración de tu dispositivo.</p>
+            <p>Enlaces a las políticas de privacidad de los proveedores de servicios de terceros utilizados por la app:
+            </p>
+            <ul>
+                <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase</a></li>
+                <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a></li>
+                <li><a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a></li>
+            </ul>
+
+            <h2>4. Eliminación y Seguridad de Datos</h2>
+            <p>No mantenemos una base de datos privada de tu identidad personal. La mayoría de los datos se almacenan
+                localmente o son gestionados por los socios mencionados anteriormente. Si deseas solicitar la
+                eliminación de los datos asociados a tu ID de usuario, contáctanos en nuestro correo de soporte. Haremos
+                la solicitud a nuestros proveedores de servicios en un plazo razonable.</p>
+
+            <h2>5. Privacidad de los Niños</h2>
+            <p>Estos Servicios no están dirigidos a personas menores de 13 años. No recopilamos deliberadamente
+                información de identificación personal de niños menores de 13 años.</p>
+
+            <h2>6. Contáctanos</h2>
+            <p>Si tienes alguna pregunta sobre esta Política de Privacidad, puedes contactarnos:</p>
+            <ul>
+                <li>Por correo electrónico: <strong>burakcekuc.app@gmail.com</strong></li>
+                <li>Visitando nuestra página de soporte: <a href="../support/">Contactar Soporte</a></li>
+            </ul>
+        </div>
+
+        <!-- FRENCH -->
+        <div id="fr" class="content-section">
+            <h1>Politique de Confidentialité</h1>
+            <span class="date">Dernière mise à jour : 20 février 2026</span>
+
+            <div class="highlight-box">
+                <strong>Résumé :</strong> Contrôleur : Assistant du tarif est conçu en tenant compte de votre vie
+                privée. Nous ne stockons pas vos données personnelles sur nos serveurs. Certaines données sont traitées
+                par des partenaires tiers standard du secteur pour les fonctionnalités, l'analyse et la publicité.
+            </div>
+
+            <p>Cette Politique de Confidentialité décrit nos politiques et procédures concernant la collecte,
+                l'utilisation et la divulgation de vos informations lorsque vous utilisez le Service, et vous informe
+                de vos droits en matière de confidentialité et de la manière dont la loi vous protège.</p>
+
+            <h2>1. Interprétation et Définitions</h2>
+            <ul>
+                <li><strong>Application :</strong> Désigne Contrôleur : Assistant du tarif, le programme logiciel
+                    fourni par le développeur individuel.</li>
+                <li><strong>Service :</strong> Désigne l'Application.</li>
+                <li><strong>Appareil :</strong> Tout appareil pouvant accéder au Service, tel qu'un smartphone ou une
+                    tablette.</li>
+            </ul>
+
+            <h2>2. Collecte et Utilisation de Vos Données Personnelles</h2>
+            <h3>Types de données collectées</h3>
+            <p>Lors de l'utilisation de notre Application, afin de fournir des fonctionnalités et d'améliorer votre
+                expérience, les données suivantes peuvent être collectées et liées à votre identité via des services
+                tiers :</p>
+            <ul>
+                <li><strong>Données de localisation :</strong> Données de localisation approximatives (générales) pour
+                    les fonctionnalités localisées et la publicité.</li>
+                <li><strong>Identifiants :</strong> ID d'utilisateur et ID d'appareil (tel que l'ID publicitaire) pour
+                    la fonctionnalité de l'application, l'analyse et le suivi.</li>
+                <li><strong>Données d'achat :</strong> Historique des transactions et statut d'abonnement (traité par
+                    RevenueCat).</li>
+                <li><strong>Données d'utilisation :</strong> Informations sur la façon dont vous interagissez avec le
+                    Service (collectées par Firebase).</li>
+                <li><strong>Diagnostics :</strong> Journaux de plantage et statistiques de performance pour assurer la
+                    stabilité de l'application.</li>
+            </ul>
+
+            <h2>3. Fournisseurs de Services Tiers et Suivi</h2>
+            <p>Nous faisons appel à des entreprises tierces pour faciliter notre Service, effectuer des services liés
+                au Service ou nous aider à analyser la façon dont notre Service est utilisé. Ces tiers ont accès à des
+                informations spécifiques (Identifiants, Données d'utilisation) uniquement pour effectuer des tâches en
+                notre nom.</p>
+            <p>Nous utilisons des fournisseurs susceptibles de suivre votre activité sur d'autres applications et sites
+                web à des fins publicitaires. Vous pouvez gérer ces autorisations via les paramètres de votre
+                appareil.</p>
+            <p>Liens vers les politiques de confidentialité des fournisseurs de services tiers utilisés par
+                l'application :</p>
+            <ul>
+                <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase</a></li>
+                <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a></li>
+                <li><a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a></li>
+            </ul>
+
+            <h2>4. Suppression et Sécurité des Données</h2>
+            <p>Nous ne maintenons pas de base de données privée de votre identité personnelle. La plupart des données
+                sont stockées localement ou gérées par les partenaires listés ci-dessus. Si vous souhaitez demander la
+                suppression des données associées à votre ID d'utilisateur, contactez-nous à notre adresse e-mail de
+                support. Nous faciliterons la demande auprès de nos prestataires de services dans un délai raisonnable.
+            </p>
+
+            <h2>5. Confidentialité des Enfants</h2>
+            <p>Ces Services ne s'adressent pas aux personnes de moins de 13 ans. Nous ne collectons pas
+                intentionnellement d'informations d'identification personnelle auprès d'enfants de moins de 13 ans.</p>
+
+            <h2>6. Contactez-Nous</h2>
+            <p>Si vous avez des questions concernant cette Politique de Confidentialité, vous pouvez nous contacter :</p>
+            <ul>
+                <li>Par e-mail : <strong>burakcekuc.app@gmail.com</strong></li>
+                <li>En visitant notre page de support : <a href="../support/">Contacter le Support</a></li>
             </ul>
         </div>
 
@@ -375,25 +514,31 @@
 
     <script>
         function switchLang(lang) {
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            const buttons = document.querySelectorAll('.lang-btn');
-            if (lang === 'en') buttons[0].classList.add('active');
-            else buttons[1].classList.add('active');
+            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+            const section = document.getElementById(lang);
+            if (section) section.classList.add('active');
 
-            document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
-            document.getElementById(lang).classList.add('active');
+            document.getElementById('lang-select').value = lang;
 
-            const brandText = document.getElementById('brand-text');
-            const navSupport = document.getElementById('nav-support');
+            const labels = {
+                tr: { brand: 'Kondüktör App', support: 'Destek' },
+                en: { brand: 'Conductor App', support: 'Support' },
+                es: { brand: 'Revisor App', support: 'Soporte' },
+                fr: { brand: 'Contrôleur App', support: 'Support' }
+            };
+            const lbl = labels[lang] || labels.en;
+            document.getElementById('brand-text').innerText = lbl.brand;
+            document.getElementById('nav-support').innerText = lbl.support;
 
-            if (lang === 'tr') {
-                brandText.innerText = 'Kondüktör App';
-                navSupport.innerText = 'Destek';
-            } else {
-                brandText.innerText = 'Conductor App';
-                navSupport.innerText = 'Support';
-            }
+            localStorage.setItem('conductor-lang', lang);
+            document.documentElement.lang = lang;
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('conductor-lang') || 'en';
+            switchLang(savedLang);
+            document.getElementById('lang-select').addEventListener('change', e => switchLang(e.target.value));
+        });
     </script>
 
 </body>

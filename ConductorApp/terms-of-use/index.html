@@ -82,31 +82,17 @@
             gap: 10px;
         }
 
-        .lang-switch {
-            display: flex;
-            gap: 5px;
-            background: #e2e8f0;
-            padding: 4px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .lang-btn {
-            padding: 4px 12px;
+        .lang-select {
+            padding: 6px 12px;
             border-radius: 6px;
             font-size: 0.85rem;
             font-weight: 600;
             border: none;
-            background: transparent;
-            color: #64748b;
-            transition: all 0.3s ease;
+            background: #e2e8f0;
+            color: #334155;
+            cursor: pointer;
             font-family: 'Spline Sans', sans-serif;
-        }
-
-        .lang-btn.active {
-            background: var(--card-bg);
-            color: var(--primary-color);
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            outline: none;
         }
 
         .content-section {
@@ -214,17 +200,20 @@
                 <a href="../support/" id="nav-support"
                     style="color: white; text-decoration: none; font-size: 0.9rem; font-weight: 500;">Support</a>
 
-                <div class="lang-switch">
-                    <button class="lang-btn active" onclick="switchLang('en')">EN</button>
-                    <button class="lang-btn" onclick="switchLang('tr')">TR</button>
-                </div>
+                <select class="lang-select" id="lang-select">
+                    <option value="en">EN</option>
+                    <option value="tr">TR</option>
+                    <option value="es">ES</option>
+                    <option value="fr">FR</option>
+                </select>
             </div>
         </div>
     </header>
 
     <main class="container">
 
-        <div id="en" class="content-section active">
+        <!-- ENGLISH -->
+        <div id="en" class="content-section">
             <h1>Terms of Use</h1>
             <span class="date">Last updated: February 20, 2026</span>
 
@@ -283,6 +272,7 @@
                     target="_blank">View Here</a></p>
         </div>
 
+        <!-- TURKISH -->
         <div id="tr" class="content-section">
             <h1>Kullanım Koşulları</h1>
             <span class="date">Son güncelleme: 20 Şubat 2026</span>
@@ -344,6 +334,133 @@
                     İnceleyin</a></p>
         </div>
 
+        <!-- SPANISH -->
+        <div id="es" class="content-section">
+            <h1>Términos de Uso</h1>
+            <span class="date">Última actualización: 20 de febrero de 2026</span>
+
+            <div class="highlight-box">
+                <strong>Acuerdo:</strong> Al descargar o usar Revisor App, estos términos se aplicarán
+                automáticamente. Por favor léalos cuidadosamente antes de usar la aplicación.
+            </div>
+
+            <h2>1. Uso General</h2>
+            <p>Revisor App está licenciada para usted (no vendida) para uso personal y no comercial. No puede copiar,
+                modificar ni intentar extraer el código fuente de la aplicación. La aplicación en sí, y todas las
+                marcas comerciales, derechos de autor, derechos de bases de datos y otros derechos de propiedad
+                intelectual relacionados, siguen perteneciendo al desarrollador.</p>
+
+            <h2>2. Suscripciones y Pagos</h2>
+            <p>Revisor ofrece funciones premium a través de suscripciones de renovación automática ("Pass" y "Pass
+                Plus"). Al comprar una suscripción, acepta los siguientes términos:</p>
+
+            <h3>Pago</h3>
+            <p>El pago se cargará a su ID de Apple o Cuenta de Google Play al confirmar la compra. Los precios se
+                muestran en la aplicación y pueden variar según la región.</p>
+
+            <h3>Renovación Automática</h3>
+            <p>La suscripción se renueva automáticamente a menos que la renovación automática se desactive al menos
+                24 horas antes del final del período actual. Su cuenta será cobrada por la renovación dentro de las
+                24 horas anteriores al final del período actual.</p>
+
+            <h3>Cancelación</h3>
+            <p>Puede administrar y cancelar sus suscripciones accediendo a la Configuración de su Cuenta en el
+                App Store o Google Play Store después de la compra. Eliminar la aplicación no cancela la suscripción.
+            </p>
+
+            <h2>3. Reembolsos</h2>
+            <p>Todas las compras son gestionadas directamente por las tiendas de aplicaciones respectivas (Apple
+                App Store o Google Play Store). No tenemos la capacidad de procesar reembolsos directamente. Contacte
+                con el soporte de Apple o Google para cualquier solicitud de reembolso.</p>
+
+            <h2>4. Aviso Legal Financiero</h2>
+            <p>Esta aplicación está diseñada como una herramienta manual de seguimiento y cálculo de presupuestos.
+                <strong>No proporciona asesoramiento financiero profesional, asesoramiento de inversiones, ni servicios
+                    bancarios.</strong> Usted es responsable de sus propias decisiones financieras.
+            </p>
+
+            <h2>5. Aviso Legal de Plataforma (Distribuidores)</h2>
+            <p>Apple y Google actúan únicamente como "Distribuidores" de esta aplicación. <strong>Apple/Google no son
+                    responsables del contenido, mantenimiento o servicios de soporte de esta aplicación.</strong> Toda
+                la responsabilidad corresponde íntegramente al desarrollador.</p>
+
+            <h2>6. Cambios en estos Términos</h2>
+            <p>Podemos actualizar nuestros Términos y Condiciones de vez en cuando. Por lo tanto, se le aconseja
+                revisar esta página periódicamente para detectar cualquier cambio. Le notificaremos cualquier cambio
+                publicando los nuevos Términos y Condiciones en esta página.</p>
+
+            <h2>7. Contáctenos</h2>
+            <p>Si tiene alguna pregunta o sugerencia sobre nuestros Términos de Uso, no dude en contactarnos en
+                <strong>burakcekuc.app@gmail.com</strong>.
+            </p>
+            <p>CLUF estándar de Apple: <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+                    target="_blank">Ver aquí</a></p>
+        </div>
+
+        <!-- FRENCH -->
+        <div id="fr" class="content-section">
+            <h1>Conditions d'Utilisation</h1>
+            <span class="date">Dernière mise à jour : 20 février 2026</span>
+
+            <div class="highlight-box">
+                <strong>Accord :</strong> En téléchargeant ou en utilisant Contrôleur App, ces conditions s'appliqueront
+                automatiquement. Veuillez les lire attentivement avant d'utiliser l'application.
+            </div>
+
+            <h2>1. Utilisation Générale</h2>
+            <p>Contrôleur App vous est accordée sous licence (non vendue) pour un usage personnel et non commercial.
+                Vous ne pouvez pas copier, modifier ni tenter d'extraire le code source de l'application. L'application
+                elle-même, ainsi que toutes les marques commerciales, droits d'auteur, droits sur les bases de données
+                et autres droits de propriété intellectuelle qui y sont liés, appartiennent toujours au développeur.</p>
+
+            <h2>2. Abonnements et Paiements</h2>
+            <p>Contrôleur propose des fonctionnalités premium via des abonnements à renouvellement automatique ("Pass"
+                et "Pass Plus"). En achetant un abonnement, vous acceptez les conditions suivantes :</p>
+
+            <h3>Paiement</h3>
+            <p>Le paiement sera débité de votre identifiant Apple ou Compte Google Play à la confirmation de l'achat.
+                Les prix sont affichés dans l'application et peuvent varier selon la région.</p>
+
+            <h3>Renouvellement Automatique</h3>
+            <p>L'abonnement se renouvelle automatiquement sauf si le renouvellement automatique est désactivé au moins
+                24 heures avant la fin de la période en cours. Votre compte sera débité pour le renouvellement dans les
+                24 heures précédant la fin de la période en cours.</p>
+
+            <h3>Annulation</h3>
+            <p>Vous pouvez gérer et annuler vos abonnements en accédant aux Paramètres de votre Compte sur l'App Store
+                ou Google Play Store après l'achat. La suppression de l'application n'annule pas l'abonnement.</p>
+
+            <h2>3. Remboursements</h2>
+            <p>Tous les achats sont gérés directement par les boutiques d'applications respectives (Apple App Store ou
+                Google Play Store). Nous n'avons pas la capacité de traiter les remboursements directement. Veuillez
+                contacter l'assistance Apple ou Google pour toute demande de remboursement.</p>
+
+            <h2>4. Avis de Non-Responsabilité Financière</h2>
+            <p>Cette application est conçue comme un outil manuel de suivi et de calcul de budget.
+                <strong>Elle ne fournit pas de conseils financiers professionnels, de conseils en investissement, ni de
+                    services bancaires.</strong> Vous êtes responsable de vos propres décisions financières.
+            </p>
+
+            <h2>5. Avis de Non-Responsabilité de Plateforme (Distributeurs)</h2>
+            <p>Apple et Google agissent uniquement en tant que "Distributeurs" de cette application.
+                <strong>Apple/Google ne sont pas responsables du contenu, de la maintenance ou des services
+                    d'assistance de cette application.</strong> Toute responsabilité appartient entièrement au
+                développeur.
+            </p>
+
+            <h2>6. Modifications de ces Conditions</h2>
+            <p>Nous pouvons mettre à jour nos Conditions Générales de temps à autre. Ainsi, il vous est conseillé de
+                consulter cette page périodiquement pour tout changement. Nous vous informerons de tout changement en
+                publiant les nouvelles Conditions Générales sur cette page.</p>
+
+            <h2>7. Contactez-Nous</h2>
+            <p>Si vous avez des questions ou des suggestions concernant nos Conditions d'Utilisation, n'hésitez pas à
+                nous contacter à <strong>burakcekuc.app@gmail.com</strong>.
+            </p>
+            <p>CLUF Apple standard : <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+                    target="_blank">Voir ici</a></p>
+        </div>
+
     </main>
 
     <footer>
@@ -354,25 +471,31 @@
 
     <script>
         function switchLang(lang) {
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            const buttons = document.querySelectorAll('.lang-btn');
-            if (lang === 'en') buttons[0].classList.add('active');
-            else buttons[1].classList.add('active');
+            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+            const section = document.getElementById(lang);
+            if (section) section.classList.add('active');
 
-            document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
-            document.getElementById(lang).classList.add('active');
+            document.getElementById('lang-select').value = lang;
 
-            const brandText = document.getElementById('brand-text');
-            const navSupport = document.getElementById('nav-support');
+            const labels = {
+                tr: { brand: 'Kondüktör App', support: 'Destek' },
+                en: { brand: 'Conductor App', support: 'Support' },
+                es: { brand: 'Revisor App', support: 'Soporte' },
+                fr: { brand: 'Contrôleur App', support: 'Support' }
+            };
+            const lbl = labels[lang] || labels.en;
+            document.getElementById('brand-text').innerText = lbl.brand;
+            document.getElementById('nav-support').innerText = lbl.support;
 
-            if (lang === 'tr') {
-                brandText.innerText = 'Kondüktör App';
-                navSupport.innerText = 'Destek';
-            } else {
-                brandText.innerText = 'Conductor App';
-                navSupport.innerText = 'Support';
-            }
+            localStorage.setItem('conductor-lang', lang);
+            document.documentElement.lang = lang;
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('conductor-lang') || 'en';
+            switchLang(savedLang);
+            document.getElementById('lang-select').addEventListener('change', e => switchLang(e.target.value));
+        });
     </script>
 
 </body>
