@@ -198,7 +198,7 @@
                             <div class="flex flex-col">
                                 <h3 class="font-bold text-text-main dark:text-white leading-tight"
                                     data-i18n="card_blog">Blog Yazarlığı</h3>
-                                <p class="text-xs text-text-sub dark:text-gray-400 mt-1">Sosyokrasi Türkiye</p>
+                                <p class="text-xs text-text-sub dark:text-gray-400 mt-1">Sosyovizyon</p>
                             </div>
                         </div>
 
@@ -263,12 +263,88 @@
                 </div>
 
                 <!-- Projects Section -->
-                <div id="projects" class="mb-24">
+                <div id="projects">
                     <div class="flex items-center justify-between mb-8">
-                        <h3 class="text-4xl font-black text-text-main dark:text-white" data-i18n="projects_title">
-                            Projelerim</h3>
+                        <h3 class="text-4xl font-black text-text-main dark:text-white" data-i18n="works_title">
+                            Çalışmalarım</h3>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Sociology Sub-section -->
+                    <div class="mb-16">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-3xl font-black text-text-main dark:text-white" data-i18n="sociology_title">
+                                Sosyoloji</h3>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Master's Thesis -->
+                            <a href="https://nek.istanbul.edu.tr/ekos/TEZ/ET004512.pdf" target="_blank"
+                                class="group cursor-pointer block">
+                                <div
+                                    class="overflow-hidden rounded-xl bg-slate-200 aspect-video mb-3 relative dark:bg-zinc-800 items-center justify-center flex">
+                                    <!-- Thesis Image -->
+                                    <img id="thesis-img" src="img/sbe_tr.webp" alt="Kent Hayatı ve Kültürel Gecikme"
+                                        class="absolute inset-0 w-full h-full object-cover z-10 transition-transform duration-500 group-hover:scale-110"
+                                        onerror="this.style.display='none'">
+                                    <!-- Icon representation (Fallback) -->
+                                    <i
+                                        class="fa-solid fa-graduation-cap text-6xl text-slate-400 group-hover:scale-110 transition-transform duration-500 dark:text-gray-500 z-0"></i>
+                                    <div
+                                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20">
+                                        <span class="material-symbols-outlined text-white text-3xl">open_in_new</span>
+                                    </div>
+                                </div>
+                                <h4 class="font-bold text-text-main text-2xl dark:text-white group-hover:text-primary dark:group-hover:text-gray-300 transition-colors"
+                                    data-i18n="thesis_title">
+                                    Kent Hayatı ve Kültürel Gecikme</h4>
+                                <div class="relative group/text">
+                                    <p id="desc-thesis"
+                                        class="text-sm text-text-sub dark:text-gray-400 line-clamp-2 transition-all duration-300"
+                                        data-i18n="thesis_desc">
+                                        Sanayi Devrimi'nden sonra teknoloji ile hayatımız arasındaki bağın güçlenmesi,
+                                        bizi daha hızlı bir yaşama zorluyor; ancak bu hıza her zaman uyum sağlamak
+                                        mümkün olmuyor. William F. Ogburn'ün kültürel gecikme kuramından hareketle bu
+                                        çalışma, kent hayatında ortaya çıkan trafik, gecekondulaşma ve işsizlik gibi
+                                        olguların, Türkiye'nin kentleşme sürecindeki kültürel gecikmelerle ilişkisini
+                                        tarihsel yöntemle incelemektedir.</p>
+                                    <button onclick="event.preventDefault(); toggleDescription('desc-thesis', this)"
+                                        class="text-xs font-bold text-primary mt-1 hover:underline focus:outline-none"
+                                        data-i18n="read_more">Devamını Oku</button>
+                                </div>
+                            </a>
+
+                            <!-- Sosyovizyon Blog -->
+                            <a href="https://sosyovizyon.substack.com/" target="_blank"
+                                class="group cursor-pointer block">
+                                <div
+                                    class="overflow-hidden rounded-xl bg-slate-200 aspect-video mb-3 relative dark:bg-zinc-800 items-center justify-center flex">
+                                    <!-- Sosyovizyon Image -->
+                                    <img src="img/sosyovizyon.webp" alt="Sosyovizyon"
+                                        class="absolute inset-0 w-full h-full object-cover z-10 transition-transform duration-500 group-hover:scale-110"
+                                        onerror="this.style.display='none'">
+                                    <!-- Icon representation (Fallback) -->
+                                    <i
+                                        class="fa-solid fa-eye text-6xl text-slate-400 group-hover:scale-110 transition-transform duration-500 dark:text-gray-500 z-0"></i>
+                                    <div
+                                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20">
+                                        <span class="material-symbols-outlined text-white text-3xl">open_in_new</span>
+                                    </div>
+                                </div>
+                                <h4 class="font-bold text-text-main text-2xl dark:text-white group-hover:text-primary dark:group-hover:text-gray-300 transition-colors"
+                                    data-i18n="sosyovizyon_title">
+                                    Sosyovizyon</h4>
+                                <p class="text-sm text-text-sub dark:text-gray-400" data-i18n="sosyovizyon_desc">
+                                    Sosyoloji ve toplum üzerine farklı bir bakış açısıyla yazılar yazdığım kişisel
+                                    blogum.</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Software Sub-section -->
+                    <div class="mb-24">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-3xl font-black text-text-main dark:text-white" data-i18n="projects_title">
+                                Yazılım</h3>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Sosyokrasi Blog (Now First) -->
                         <a href="https://sosyokrasi.org" target="_blank" class="group cursor-pointer block">
                             <div
@@ -339,6 +415,7 @@
                                     data-i18n="read_more">Devamını Oku</button>
                             </div>
                         </a>
+                        </div>
                     </div>
                 </div>
 
